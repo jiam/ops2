@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href="/static/css/nav.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/4.0.1/highcharts.js"></script>
+    <script src="http://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="http://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <link href="http://mottie.github.io/tablesorter/css/theme.default.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    {% include 'head.html' %}
+    <div class="container-fluid">
+      <div class="row">
+        {% include 'nav.html' %}
+        {% block index %}
+        {% endblock %}
+        {% block user %}
+        {% endblock %}
+        {% block dashboard %}
+        {% endblock %}
+        {% block object_department %}
+        {% endblock %}
+        {% block object_service %}
+        {% endblock %}
+        {% block object_vendor %}
+        {% endblock %}
+        {% block object_model %}
+        {% endblock %}
+        {% block object_cpu %}
+        {% endblock %}
+        {% block object_memory %}
+        {% endblock %}
+        {% block object_disk %}
+        {% endblock %}
+        {% block object_raid %}
+        {% endblock %}
+        {% block object_hba %}
+        {% endblock %}
+        {% block object_pcie %}
+        {% endblock %}
+        {% block object_nic %}
+        {% endblock %}
+        {% block object_os %}
+        {% endblock %}
+        {% block object_kernel %}
+        {% endblock %}
+        {% block host_physical %}
+        {% endblock %}
+        {% block host_virtual %}
+        {% endblock %}
+        {% block accessories_memory %}
+        {% endblock %}
+        {% block accessories_disk %}
+        {% endblock %}
+        {% block resource_idc %}
+        {% endblock %}
+        {% block resource_zone %}
+        {% endblock %}
+        {% block resource_rack %}
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html'  %}
+{% block object_cpu %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">CPU</h1>
+    <a class="btn btn-primary" href="/cmdb/object/cpu/add"><i class="fa fa-plus"></i>添加</a>
+    <div class='hero-unit'>
+    <table class="table table-condensed"> 
+        <tbody>
+            <tr> 
+                <th>CPU型号</th> 
+                <th>CPU频率</th> 
+                <th>物理内核</th> 
+                <th>逻辑内核</th> 
+                <th>编辑</th> 
+                <th>删除</th> 
+           </tr> 
+           {% for object in objects %}
+           <tr> 
+                <td>{{object.CPU_Type}}</td> 
+                <td>{{object.CPU_Frequency}}</td> 
+                <td>{{object.CPU_Cores}}</td> 
+                <td>{{object.CPU_Logical_Cores}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_cpu_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_cpu_delete' object.id %}">删除</a></td> 
+          </tr> 
+          {% endfor %}
+     </table>
+     </div>
+
+
+</div>
+{% endblock %}

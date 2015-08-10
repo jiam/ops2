@@ -1,0 +1,28 @@
+{% extends 'base.html'  %}
+{% block resource_zone %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">区域</h1>
+    <a class="btn btn-primary" href="/cmdb/resource/zone/add"><i class="fa fa-plus"></i>添加</a>
+    <div class='hero-unit'>
+    <table class="table table-condensed"> 
+        <tbody>
+            <tr> 
+                <th>区域名称</th> 
+                <th>所属机房</th> 
+                <th>编辑</th> 
+                <th>删除</th> 
+           </tr> 
+           {% for object in objects %}
+           <tr> 
+                <td>{{object.Zone_Name}}</td> 
+                <td>{{object.idc}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'resource_zone_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'resource_zone_delete' object.id %}">删除</a></td> 
+          </tr> 
+          {% endfor %}
+     </table>
+     </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html'  %}
+{% block object_hba %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">HBA</h1>
+    <a class="btn btn-primary" href="/cmdb/object/hba/add"><i class="fa fa-plus"></i>添加</a>
+    <div class='hero-unit'>
+    <table class="table table-condensed"> 
+        <tbody>
+            <tr> 
+                <th>HBA型号</th> 
+                <th>编辑</th> 
+                <th>删除</th> 
+           </tr> 
+           {% for object in objects %}
+           <tr> 
+                <td>{{object.HBA_Type}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_hba_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_hba_delete' object.id %}">删除</a></td> 
+          </tr> 
+          {% endfor %}
+     </table>
+     </div>
+
+
+</div>
+{% endblock %}

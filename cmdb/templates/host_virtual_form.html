@@ -1,0 +1,85 @@
+{% extends 'base.html'  %}
+{% block index %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">虚拟主机</h3> 
+    <div>
+        <form method="post">{% csrf_token %}
+                    {# 基本信息 #}
+            <div class = "row">
+                    <label for="{{ form.HostName.id_for_label }}">主机名:</label>
+                    {{ form.HostName }}
+                    <label for="{{ form.Status.id_for_label }}">状态:</label>
+                    {{ form.Status }}
+                    <label for="{{ form.department.id_for_label }}">部门:</label>
+                    {{ form.department }}
+                    <label for="{{ form.service.id_for_label }}">业务:</label>
+                    {{ form.service }}
+            </div>
+            <div class = "row">
+                    <label for="{{ form.UseInfo.id_for_label }}">用途:</label>
+                    {{ form.UseInfo }}
+                    <label for="{{ form.User.id_for_label }}">用户:</label>
+                    {{ form.User }}
+                    <label for="{{ form.Manage_IP.id_for_label }}">管理IP:</label>
+                    {{ form.Manage_IP }}
+            </div>
+            <hr>
+                    {# 系统信息 #}
+            <div class='row'>
+                    <label for="{{ form.os.id_for_label }}">系统:</label>
+                    {{ form.os }}
+                    <label for="{{ form.kerenl.id_for_label }}">内核:</label>
+                    {{ form.kernel }}
+                    <label for="{{ form.vCPU_Number.id_for_label }}">逻辑CPU个数:</label>
+                    {{ form.vCPU_Number }}
+                    <label for="{{ form.Memory_Size.id_for_label }}">内存大小:</label>
+                    {{ form.Memory_Size }}
+                    <label for="{{ form.Disk_Size.id_for_label }}">硬盘大小:</label>
+                    {{ form.Disk_Size }}
+            </div>
+            <div class='row'>
+                    <label for="{{ form.VIP.id_for_label }}">VIP:</label>
+                    {{ form.VIP }}
+                    <label for="{{ form.NAS_IP.id_for_label }}">NAS IP:</label>
+                    {{ form.NAS_IP }}
+             </div>
+            <hr>
+            <hr>
+                    {# 其他信息 #}
+            <div class='row'>
+                    <label for="{{ form.Application_Time.id_for_label }}">申请日期:</label>
+                    {{ form.Application_Time }}
+                    <label for="{{ form.Up_Time.id_for_label }}">开通日期:</label>
+                    {{ form.Up_Time }}
+             </div>
+             <div class='row'>
+                    <label for="{{ form.Use_Period.id_for_label }}">截止日期:</label>
+                    {{ form.Use_Period }}
+                    <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
+                    {{ form.Change_Time }}
+             </div>
+             <div class='row'>
+                    <label for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
+                    {{ form.Change_Info }}
+                    <label for="{{ form.Remarks.id_for_label }}">备注:</label>
+                    {{ form.Remarks }}
+            </div>
+    
+    <input
+            value = '保存'
+            type  = 'submit' 
+            class = 'btn btn-success' 
+    />
+     <a
+            class = 'btn'
+            href  = '/cmdb/host/physical/get'
+        >
+            取消
+        </a>
+</form>
+     <script>
+     $("#id_vendor").get(0).selectedIndex={{ form.instance.vendor.id }};
+     </script>
+     </div>
+</div>
+{% endblock %}

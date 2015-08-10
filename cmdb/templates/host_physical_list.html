@@ -1,0 +1,68 @@
+{% extends 'base.html'  %}
+{% block host_physical %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">物理主机</h1>
+    <a class="btn btn-primary" href="/cmdb/host/physical/add"><i class="fa fa-plus"></i>添加</a>
+    {# <table id="myTable" "class="tablesorter table table-condensed"> #}
+    <table id="myTable" class="tablesorter"> 
+        <thead>
+            <tr> 
+                <th>主机名</th> 
+                <th>主机状态</th> 
+                <th>管理IP</th> 
+                <th>远程管理IP</th> 
+                <th>使用者</th> 
+                <th>用途</th> 
+                <th>编辑</th> 
+                <th>删除</th> 
+                <th>详情</th> 
+           </tr> 
+        </thead>
+        <tbody>
+           {% for object in objects %}
+           <tr> 
+                <td>{{object.HostName}}</td> 
+                {% if object.Status == 0 %}
+                    <td>使用</td> 
+                {% elif object.Status == 1 %}
+                    <td>空闲</td> 
+                {% elif object.Status == 2 %}
+                    <td>故障</td> 
+                {% else %}
+                    <td>备用</td> 
+                {% endif %}
+                <td>{{object.Manage_IP}}</td> 
+                <td>{{object.RAC_IP}}</td> 
+                <td>{{object.User}}</td> 
+                <td>{{object.UseInfo}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_delete' object.id %}">删除</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_detail' object.id %}">详情</a></td> 
+             </tr> 
+          {% endfor %}
+             </tbody> 
+     </table>
+     <div class="pagination">
+    <span class="step-links">
+        {% if objects.has_previous %}
+            <a href="?page={{ objects.previous_page_number }}">前一页</a>
+        {% endif %}
+
+        <span class="current">
+            第 {{ objects.number }} 页  共{{ objects.paginator.num_pages }}页 {{ total }}条
+        </span>
+
+        {% if objects.has_next %}
+            <a href="?page={{ objects.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+    </div>
+     <script>
+     $(function(){
+     $("#myTable").tablesorter();
+     });
+     </script>
+
+</div>
+{% endblock %}
+

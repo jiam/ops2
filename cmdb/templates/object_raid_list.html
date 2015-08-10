@@ -1,0 +1,34 @@
+{% extends 'base.html'  %}
+{% block object_raid %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">RAID</h1>
+    <a class="btn btn-primary" href="/cmdb/object/raid/add"><i class="fa fa-plus"></i>添加</a>
+    <div class='hero-unit'>
+    <table class="table table-condensed"> 
+        <tbody>
+            <tr> 
+                <th>RAID型号</th> 
+                <th>RAID缓存</th> 
+                <th>RAID电池</th> 
+                <th>编辑</th> 
+                <th>删除</th> 
+           </tr> 
+           {% for object in objects %}
+           <tr> 
+                <td>{{object.RAID_Type}}</td> 
+                <td>{{object.RAID_Cache}}</td> 
+                {% if object.RAID_Battery == '1' %}
+                <td>有</td> 
+                {% else %}
+                <td>无</td> 
+                {% endif %}
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_raid_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'object_raid_delete' object.id %}">删除</a></td> 
+          </tr> 
+          {% endfor %}
+     </table>
+     </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html'  %}
+{% block resource_idc %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">机房</h1>
+    <div class='hero-unit'>
+     <form method="post">{% csrf_token %}
+    <table>
+    {{ form.as_table }}
+   </table>
+    <input
+            value = '保存'
+            type  = 'submit' 
+            class = 'btn btn-success' 
+        />
+     <a
+            class = 'btn'
+            href  = '/cmdb/resource/idc/get'
+        >
+            取消
+        </a>
+</form>
+     </div>
+
+
+</div>
+{% endblock %}

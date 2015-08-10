@@ -1,0 +1,67 @@
+{% extends 'base.html'  %}
+{% block index %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">虚拟主机详情</h3> 
+    <div>
+            <div class = "row">
+                    <label for="{{ object.HostName.id_for_label }}">主机名:</label>
+                    {{ object.HostName }}
+                    <label for="{{ object.Status.id_for_label }}">状态:</label>
+                    {{ object.Status }}
+                    <label for="{{ object.department.id_for_label }}">部门:</label>
+                    {{ object.department }}
+                    <label for="{{ object.service.id_for_label }}">业务:</label>
+                    {{ object.service }}
+            </div>
+            <div class = "row">
+                    <label for="{{ object.UseInfo.id_for_label }}">用途:</label>
+                    {{ object.UseInfo }}
+                    <label for="{{ object.User.id_for_label }}">用户:</label>
+                    {{ object.User }}
+                    <label for="{{ object.Manage_IP.id_for_label }}">管理IP:</label>
+                    {{ object.Manage_IP }}
+            </div>
+            <hr>
+                    {# 系统信息 #}
+            <div class='row'>
+                    <label for="{{ object.os.id_for_label }}">系统:</label>
+                    {{ object.os }}
+                    <label for="{{ object.kerenl.id_for_label }}">内核:</label>
+                    {{ object.kernel }}
+                    <label for="{{ object.vCPU_Number.id_for_label }}">逻辑CPU个数:</label>
+                    {{ object.vCPU_Number }}
+                    <label for="{{ object.Memory_Size.id_for_label }}">内存大小:</label>
+                    {{ object.Memory_Size }}
+                    <label for="{{ object.Disk_Size.id_for_label }}">硬盘大小:</label>
+                    {{ object.Disk_Size }}
+            </div>
+            <div class='row'>
+                    <label for="{{ object.VIP.id_for_label }}">VIP:</label>
+                    {{ object.VIP }}
+                    <label for="{{ object.NAS_IP.id_for_label }}">NAS IP:</label>
+                    {{ object.NAS_IP }}
+             </div>
+            <hr>
+                    {# 其他信息 #}
+            <div class='row'>
+                    <label for="{{ object.Application_Time.id_for_label }}">申请日期:</label>
+                    {{ object.Application_Time }}
+                    <label for="{{ object.Up_Time.id_for_label }}">开通日期:</label>
+                    {{ object.Up_Time }}
+             </div>
+             <div class='row'>
+                    <label for="{{ object.Use_Period.id_for_label }}">截止日期:</label>
+                    {{ object.Use_Period }}
+                    <label for="{{ object.Change_Time.id_for_label }}">变更日期:</label>
+                    {{ object.Change_Time }}
+             </div>
+             <div class='row'>
+                    <label for="{{ object.Change_Info.id_for_label }}">变更说明:</label>
+                    {{ object.Change_Info }}
+                    <label for="{{ object.Remarks.id_for_label }}">备注:</label>
+                    {{ object.Remarks }}
+            </div>
+    
+     </div>
+</div>
+{% endblock %}
