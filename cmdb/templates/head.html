@@ -12,12 +12,13 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/cmdb/dashboard">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a id="id_username" href="#"></a></li>
+            <li><a href="/cmdb/user/changepw">修改密码</a></li>
+            <li><a href="/cmdb/logout">退出</a></li>
             <li><a href="#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+          <form class="navbar-form navbar-right" method='get' action='/cmdb/search'>
+            <input type="text" name='q' class="form-control" placeholder="Search..."> {% csrf_token %}
           </form>
         </div>
       </div>

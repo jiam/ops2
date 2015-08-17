@@ -1,14 +1,10 @@
 {% extends 'base.html'  %}
 {% block host_virtual %}
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-   <h1 class="page-header">虚拟主机</h1> 
-    <a class="btn btn-primary" href="/cmdb/host/virtual/add"><i class="fa fa-plus"></i>添加</a>
-    <form class="navbar-form navbar-right" method='get' action='/cmdb/host/virtual/search'> {% csrf_token %}
+   <h1 class="page-header">登录日志</h1> 
+    <form class="navbar-form navbar-right" method='get' action='/cmdb/loginlog/search'> {% csrf_token %}
             <select id="id_search_key"  name="search_key" class="form-control">
-              <option value="HostName">主机名</option>
-              <option value="Manage_IP">管理IP</option>
-              <option value="User">使用者</option>
-              <option value="Useinfo">用途</option>
+              <option value="user">用户名</option>
             </select>
             <input id="id_search_value"type="text" name="search_value" class="form-control">
             {% if search_key %}
@@ -22,35 +18,18 @@
     <table id="myTable" class="tablesorter"> 
         <thead>
             <tr> 
-                <th>主机名</th> 
-                <th>主机状态</th> 
-                <th>管理IP</th> 
-                <th>使用者</th> 
-                <th>用途</th> 
-                <th>编辑</th> 
-                <th>删除</th> 
-                <th>详情</th> 
+                <th>用户名</th> 
+                <th>信息</th> 
+                <th>时间</th> 
+                
            </tr> 
          </thead>
          </tbody>         
            {% for object in objects %}
            <tr> 
-                <td>{{object.HostName}}</td> 
-                {% if object.Status == 0 %}
-                    <td>使用</td> 
-                {% elif object.Status == 1 %}
-                    <td>空闲</td> 
-                {% elif object.Status == 2 %}
-                    <td>故障</td> 
-                {% else %}
-                    <td>备用</td> 
-                {% endif %}
-                <td>{{object.Manage_IP}}</td> 
-                <td>{{object.User}}</td> 
-                <td>{{object.Use_Info}}</td> 
-                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_virtual_edit' object.id %}">编辑</a></td> 
-                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_virtual_delete' object.id %}">删除</a></td> 
-                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_virtual_detail' object.id %}">详情</a></td> 
+                <td>{{object.user}}</td> 
+                <td>{{object.message}}</td> 
+                <td>{{object.action_time}}</td> 
           </tr> 
           {% endfor %}
           </tbody>

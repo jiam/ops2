@@ -23,6 +23,8 @@
         {% endblock %}
         {% block user %}
         {% endblock %}
+        {% block changepw %}
+        {% endblock %}
         {% block dashboard %}
         {% endblock %}
         {% block object_department %}
@@ -68,4 +70,21 @@
       </div>
     </div>
   </body>
+<script>
+ $.ajax({
+              async: false,
+              type: "GET",
+              url: "/cmdb/user/info",
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $( document ).ready(function() {
+                            $("#id_username").text(result.username);
+                         });
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+</script>
 </html>

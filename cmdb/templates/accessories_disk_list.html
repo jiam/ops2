@@ -3,9 +3,22 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="page-header">配件硬盘</h1>
     <a class="btn btn-primary" href="/cmdb/accessories/disk/add"><i class="fa fa-plus"></i>添加</a>
-    <div class='hero-unit'>
+    <form class="navbar-form navbar-right" method='get' action='/cmdb/accessories/disk/search'> {% csrf_token %}
+            <select id="id_search_key"  name="search_key" class="form-control">
+              <option value="SN">磁盘SN</option>
+              <option value="Host_SN">主机SN</option>
+            </select>
+            <input id="id_search_value"type="text" name="search_value" class="form-control">
+            {% if search_key %}
+            <script>
+                $("#id_search_key ").val("{{search_key}}"); 
+                $("#id_search_value ").val("{{search_value}}"); 
+            </script>
+            {% endif %}
+            <input type="submit" class="form-control" value="查询">
+    </form>
     <table class="table table-condensed"> 
-        <tbody>
+        <thead>
             <tr> 
                 <th>SN</th> 
                 <th>状态</th> 
@@ -14,6 +27,8 @@
                 <th>编辑</th> 
                 <th>删除</th> 
            </tr> 
+        </thead>
+        <tbody>
            {% for object in objects %}
            <tr> 
                 <td>{{object.SN}}</td> 
@@ -22,11 +37,38 @@
                 <td>{{object.Host_SN}}</td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'accessories_disk_edit' object.id %}">编辑</a></td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'accessories_disk_delete' object.id %}">删除</a></td> 
-          </tr> 
-          {% endfor %}
+           </tr> 
+           {% endfor %}
+        </tbody>
      </table>
-     </div>
+    <div class="pagination">
+    <span class="step-links">
+        {% if objects.has_previous %}
+            {% if search_value %}
+            <a href="?page={{ objects.previous_page_number }}&search_key={{search_key}}&search_value={{search_value}}">前一页</a>
+            {% else %}
+            <a href="?page={{ objects.previous_page_number }}">前一页</a>
+            {% endif %}
 
+        {% endif %}
 
+        <span class="current">
+            第 {{ objects.number }} 页  共{{ objects.paginator.num_pages }}页 {{ total }}条
+        </span>
+
+        {% if objects.has_next %}
+            {% if search_value %}
+            <a href="?page={{ objects.next_page_number }}&search_key={{search_key}}&search_value={{search_value}}">下一页</a>
+            {% else %}
+            <a href="?page={{ objects.next_page_number }}">下一页</a>
+            {% endif %}
+        {% endif %}
+    </span>
+    </div>
+     <script>
+     $(function(){
+     $("#myTable").tablesorter();
+     });
+     </script>
 </div>
 {% endblock %}

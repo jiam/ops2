@@ -71,3 +71,25 @@ def virtual_delete(request,pk):
 def virtual_detail(request,pk):
     object = get_object_or_404(HostVirtual,pk=pk)
     return render(request,'host_virtual_detail.html', {'object':object})
+
+@login_required
+def virtual_search(request):
+    if request.method == 'GET':
+        search_key = request.GET['search_key']
+        search_value = request.GET['search_value']
+        if search_value:
+            params = { search_key+'__startswith':search_value}
+            objects_list = HostVirtual.objects.filter(**params).order_by(search_key)
+        else:
+            objects_list = HostVirtual.objects.all().order_by(search_key)
+        num = objects_list.count()
+        paginator = Paginator(objects_list,15)
+        page = request.GET.get('page')
+        try:
+            objects = paginator.page(page)
+        except PageNotAnInteger:
+            objects = paginator.page(1)
+        except EmptyPage:
+            objects = paginator.page(paginator.num_pages)
+        context = {'objects':objects,'total':num,'search_key':search_key,'search_value':search_value}
+        return render(request,'host_virtual_list.html',context)

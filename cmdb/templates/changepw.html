@@ -1,0 +1,22 @@
+{% extends 'base.html'  %}
+{% block changepw %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+ <div class="container col-sm-offset-4 col-md-3">
+         <form class="form-signin" action="" method="post">
+         {% csrf_token %}
+         <p> <input autofocus="True" class="form-control" id="id_oldpwd" name="oldpwd" placeholder="密码" required="True" type="password" /></p>
+         <p> <input autofocus="True" class="form-control" id="id_newpwd" name="newpwd" placeholder="新密码" required="True" type="password" /></p>
+         <p> <input autofocus="True" class="form-control" id="id_repwd" name="repwd" placeholder="重复密码" required="True" type="password" /></p>
+         <button class="btn btn-primary  col-md-3" type="submit"> 确定</button>
+         <button class="btn btn-primary  col-sm-offset-6 col-col-md-3" type="submit"> 取消</button>
+         </form>
+         {% if  result %}
+         <div class="alert alert-danger" role="alert">
+           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+           <span class="sr-only">Error:</span>
+              {{ result }}
+        </div>
+        {% endif %}
+    </div> <!-- /container -->
+</div>
+{% endblock %}
