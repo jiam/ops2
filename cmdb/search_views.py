@@ -27,8 +27,8 @@ def search(request):
         if 'cmdb.hostvirtual' in item['django_ct']:
             hostvirtuals.append(item)
     context = {'hostphysicals':hostphysicals,'hostvirtuals':hostvirtuals}
-    return render(request,'search/search.html',context)
-    #return HttpResponse(solr_url.encode('utf-8')) 
+    return render(request,'search.html',context)
+    #return HttpResponse(json.dumps(context)) 
 
     
     
