@@ -7,7 +7,15 @@
                     <label for="{{ object.HostName.id_for_label }}">主机名:</label>
                     {{ object.HostName }}
                     <label for="{{ object.Status.id_for_label }}">状态:</label>
-                    {{ object.Status }}
+                    {% if object.Status == 0 %}
+                    使用
+                    {% elif object.Status == 1 %}
+                    空闲
+                    {% elif object.Status == 2 %}
+                    故障
+                    {% else %}
+                    备用
+                    {% endif %}
                     <label for="{{ object.department.id_for_label }}">部门:</label>
                     {{ object.department }}
                     <label for="{{ object.service.id_for_label }}">业务:</label>
