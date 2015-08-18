@@ -132,7 +132,6 @@ def get_op_log(request):
                  'content_type':ContentType.objects.get(id = object.content_type_id).name,
                  'action_flag':object.action_flag.__str__(),
                  'object_repr':object.object_repr,
-                 'change_message':object.change_message,
                  'action_time':action_time.strftime('%Y-%m-%d  %H:%M:%S')
                 }
             objects_list.append(object_d)
