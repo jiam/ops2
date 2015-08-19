@@ -357,7 +357,7 @@ class HostVirtualForm(ModelForm):
         'placeholder':'必填',
         'required':'True',
         'autofocus':'True'}))
-    UseInfo = forms.CharField(widget=forms.TextInput(attrs={
+    Use_Info = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':100,
         'size':51,
         'placeholder':'必填',
@@ -373,6 +373,11 @@ class HostVirtualForm(ModelForm):
         'placeholder':'必填',
         'required':'True',}))
     VIP = forms.CharField(widget=forms.TextInput(attrs={
+        'maxlength':30,
+        'size':12,
+        }),
+        required=False)
+    NAS_IP = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':12,
         }),
