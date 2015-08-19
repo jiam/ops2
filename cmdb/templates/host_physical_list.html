@@ -5,6 +5,7 @@
     <a class="btn btn-primary" href="/cmdb/host/physical/add"><i class="fa fa-plus"></i>添加</a>
     <form class="navbar-form navbar-right" method='get' action='/cmdb/host/physical/search'> {% csrf_token %}
             <select id="id_search_key"  name="search_key" class="form-control">
+              <option value="SN">序列号</option>
               <option value="HostName">主机名</option>
               <option value="Manage_IP">管理IP</option>
               <option value="RAC_IP">远程管理IP</option>

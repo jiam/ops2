@@ -27,6 +27,7 @@
                 <th>实例</th> 
                 <th>操作</th> 
                 <th>时间</th> 
+                <th>详情</th>
            </tr> 
          </thead>
          </tbody>         
@@ -43,6 +44,7 @@
                 <td>删除</td>
                 {% endif %}             
                 <td>{{object.action_time | date:"Y-m-d H:i"}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'get_op_detail' object.id %}">详情</a></td>
           </tr> 
           {% endfor %}
           </tbody>

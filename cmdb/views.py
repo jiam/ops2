@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.admin.models import LogEntry
@@ -165,3 +164,9 @@ def search_op_log(request):
             objects = paginator.page(paginator.num_pages)
         context = {'objects':objects,'total':num,'search_key':search_key,'search_value':search_value}
         return render(request,'oplog_list.html',context)
+
+@login_required
+def get_op_detail(request,pk):
+    object = get_object_or_404(LogEntry,pk=pk)
+    #return render(request,'oplog_detail.html', {'object':object})
+    return HttpResponse(object.change_message)
