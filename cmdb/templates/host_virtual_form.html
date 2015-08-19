@@ -49,14 +49,38 @@
             <div class='row'>
                     <label for="{{ form.Application_Time.id_for_label }}">申请日期:</label>
                     {{ form.Application_Time }}
+                     <script>
+                    $('#id_Application_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
                     <label for="{{ form.Up_Time.id_for_label }}">开通日期:</label>
                     {{ form.Up_Time }}
+                     <script>
+                    $('#id_Up_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
              </div>
              <div class='row'>
                     <label for="{{ form.Use_Period.id_for_label }}">截止日期:</label>
                     {{ form.Use_Period }}
+                     <script>
+                    $('#id_Use_Period').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
                     <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
                     {{ form.Change_Time }}
+                     <script>
+                    $('#id_Change_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
              </div>
              <div class='row'>
                     <label for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
@@ -77,9 +101,6 @@
             取消
         </a>
 </form>
-     <script>
-     $("#id_vendor").get(0).selectedIndex={{ form.instance.vendor.id }};
-     </script>
      </div>
 </div>
 {% endblock %}

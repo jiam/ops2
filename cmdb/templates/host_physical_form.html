@@ -108,14 +108,38 @@
             <div class='row'>
                     <label for="{{ form.Purchasing_Time.id_for_label }}">购买日期:</label>
                     {{ form.Purchasing_Time }}
+                    <script>
+                    $('#id_Purchasing_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
                     <label for="{{ form.Guarantee_Time.id_for_label }}">过保日期:</label>
                     {{ form.Guarantee_Time }}
+                    <script>
+                    $('#id_Guarantee_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
              </div>
              <div class='row'>
                     <label for="{{ form.Up_Time.id_for_label }}">上架日期:</label>
                     {{ form.Up_Time }}
+                    <script>
+                    $('#id_Up_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
                     <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
                     {{ form.Change_Time }}
+                    <script>
+                    $('#id_Change_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
              </div>
              <div class='row'>
                     <label for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
