@@ -106,7 +106,7 @@ def search_login_log(request):
             params = { search_key+'__startswith':search_value}
             objects_list = Loginlog.objects.filter(**params).order_by(search_key)
         else:
-            objects_list = LoginLog.objects.all().order_by(search_key)
+            objects_list = Loginlog.objects.all().order_by(search_key)
         num = objects_list.count()
         paginator = Paginator(objects_list,15)
         page = request.GET.get('page')
@@ -122,20 +122,39 @@ def search_login_log(request):
 @login_required
 def get_op_log(request):
     if request.method == 'GET':
-        objects_list = []
+        page = request.GET.get('page')
         objects = LogEntry.objects.all().order_by('-id')
-        for object in objects:
-            user = User.objects.get(id=object.user_id).username
-            action_time = object.action_time+datetime.timedelta(hours=8)
-            object_d = {
-                 'user':user,
-                 'content_type':ContentType.objects.get(id = object.content_type_id).name,
-                 'action_flag':object.action_flag.__str__(),
-                 'object_repr':object.object_repr,
-                 'action_time':action_time.strftime('%Y-%m-%d  %H:%M:%S')
-                }
-            objects_list.append(object_d)
-        num = len(objects_list)
+        num = LogEntry.objects.count()
+        paginator = Paginator(objects,15)
+        try:
+            objects = paginator.page(page)
+        except PageNotAnInteger:
+            objects = paginator.page(1)
+        except EmptyPage:
+            objects = paginator.page(paginator.num_pages)
+        context = {'objects':objects,'total':num}
+        return render(request,'oplog_list.html',context)
+
+
+@login_required
+def search_op_log(request):
+    if request.method == 'GET':
+        search_key = request.GET['search_key']
+        search_value = request.GET['search_value']
+        if search_value: 
+            if search_key == 'user':
+                id = User.objects.get(username=search_value).id
+                objects_list = LogEntry.objects.filter(user=id).order_by('-id')
+            elif search_key == 'content_type':
+                id = ContentType.objects.get(name=search_value).id
+                objects_list = LogEntry.objects.filter(content_type=id).order_by('-id')
+            else:
+                params = { search_key+'__startswith':search_value}
+                objects_list = LogEntry.objects.filter(**params).order_by(search_key)
+               
+        else:
+            objects_list = LogEntry.objects.all().order_by(search_key)
+        num = objects_list.count()
         paginator = Paginator(objects_list,15)
         page = request.GET.get('page')
         try:
@@ -144,5 +163,5 @@ def get_op_log(request):
             objects = paginator.page(1)
         except EmptyPage:
             objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        context = {'objects':objects,'total':num,'search_key':search_key,'search_value':search_value}
         return render(request,'oplog_list.html',context)

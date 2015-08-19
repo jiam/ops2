@@ -115,15 +115,15 @@
                     {# 其他信息 #}
             <div class='row'>
                     <label for="{{ object.Purchasing_Time.id_for_label }}">购买日期:</label>
-                    {{ object.Purchasing_Time }}
+                    {{ object.Purchasing_Time | date:"Y-m-d" }}
                     <label for="{{ object.Guarantee_Time.id_for_label }}">过保日期:</label>
-                    {{ object.Guarantee_Time }}
+                    {{ object.Guarantee_Time | date:"Y-m-d" }}
              </div>
              <div class='row'>
                     <label for="{{ object.Up_Time.id_for_label }}">上架日期:</label>
-                    {{ object.Up_Time }}
+                    {{ object.Up_Time | date:"Y-m-d"}}
                     <label for="{{ object.Change_Time.id_for_label }}">变更日期:</label>
-                    {{ object.Change_Time }}
+                    {{ object.Change_Time | date:"Y-m-d"}}
              </div>
              <div class='row'>
                     <label for="{{ object.Change_Info.id_for_label }}">变更说明:</label>

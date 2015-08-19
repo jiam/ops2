@@ -2,6 +2,7 @@
 from django import forms
 from django.forms import ModelForm,TextInput,ModelChoiceField,extras,Textarea
 from cmdb.models import *
+#from datetimewidget.widgets import DateWidget
 
 class LoginForm(forms.Form):
     username = forms.CharField(label='',widget=forms.TextInput(attrs={
@@ -405,6 +406,7 @@ class HostVirtualForm(ModelForm):
     Status_CHOICES = ((0,'使用'),(1,'空闲'),(2,'故障'),(3,'备用'))
     Status = forms.ChoiceField(widget=forms.Select(),choices=Status_CHOICES)
     Application_Time = forms.DateField(widget=extras.SelectDateWidget(),initial='2015-01-01')
+    #Application_Time = forms.DateField(widget=DateWidget(usel10n=True, bootstrap_version=3))
     Use_Period = forms.DateField(widget=extras.SelectDateWidget(),initial='2015-01-01')
     Up_Time = forms.DateField(widget=extras.SelectDateWidget(),initial='2015-01-01')
     Change_Time = forms.DateField(widget=extras.SelectDateWidget(),initial='2015-01-01')

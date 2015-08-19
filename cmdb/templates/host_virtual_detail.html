@@ -53,15 +53,15 @@
                     {# 其他信息 #}
             <div class='row'>
                     <label for="{{ object.Application_Time.id_for_label }}">申请日期:</label>
-                    {{ object.Application_Time }}
+                    {{ object.Application_Time|date:"Y-m-d"}}
                     <label for="{{ object.Up_Time.id_for_label }}">开通日期:</label>
-                    {{ object.Up_Time }}
+                    {{ object.Up_Time | date:"Y-m-d"}}
              </div>
              <div class='row'>
                     <label for="{{ object.Use_Period.id_for_label }}">截止日期:</label>
                     {{ object.Use_Period }}
                     <label for="{{ object.Change_Time.id_for_label }}">变更日期:</label>
-                    {{ object.Change_Time }}
+                    {{ object.Change_Time | date:"Y-m-d" }}
              </div>
              <div class='row'>
                     <label for="{{ object.Change_Info.id_for_label }}">变更说明:</label>

@@ -2,13 +2,13 @@
 {% block host_virtual %}
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
    <h1 class="page-header">操作日志</h1> 
-    <form class="navbar-form navbar-right" method='get' action='/cmdb/loginlog/search'> {% csrf_token %}
+    <form class="navbar-form navbar-right" method='get' action='/cmdb/oplog/search'> {% csrf_token %}
             <select id="id_search_key"  name="search_key" class="form-control">
               <option value="user">用户名</option>
-              <option value="user">对象</option>
-              <option value="user">实例</option>
-              <option value="user">操作</option>
-              <option value="user">时间</option>
+              <option value="content_type">对象</option>
+              <option value="object_repr">实例</option>
+              <option value="action_flag">操作</option>
+              <option value="action_time">时间</option>
             </select>
             <input id="id_search_value"type="text" name="search_value" class="form-control">
             {% if search_key %}
@@ -35,8 +35,14 @@
                 <td>{{object.user}}</td> 
                 <td>{{object.content_type}}</td> 
                 <td>{{object.object_repr}}</td> 
-                <td>{{object.action_flag}}</td> 
-                <td>{{object.action_time}}</td> 
+                {%if object.action_flag == 1 %} 
+                <td>添加</td>
+                {%elif object.action_flag == 2 %} 
+                <td>修改</td>
+                {%elif object.action_flag == 3 %} 
+                <td>删除</td>
+                {% endif %}             
+                <td>{{object.action_time | date:"Y-m-d H:i"}}</td> 
           </tr> 
           {% endfor %}
           </tbody>
