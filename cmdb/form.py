@@ -2,7 +2,6 @@
 from django import forms
 from django.forms import ModelForm,TextInput,ModelChoiceField,extras,Textarea
 from cmdb.models import *
-from datetimewidget.widgets import DateWidget
 
 class LoginForm(forms.Form):
     username = forms.CharField(label='',widget=forms.TextInput(attrs={
