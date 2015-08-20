@@ -25,6 +25,7 @@ import resource_zone_views
 import resource_rack_views
 import search_views
 import api_views
+import application_views
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'ops.views.home', name='home'),
@@ -56,6 +57,7 @@ urlpatterns = patterns('',
     url(r'^api/host/virtual/add$', api_views.host_virtual_add),
     url(r'^api/host/virtual/update$', api_views.host_virtual_update),
     url(r'^api/host/virtual/get$', api_views.host_virtual_get),
+    url(r'^api/application/add$', api_views.application_add),
     url(r'^api/search$', api_views.search),
     url(r'^$',views.index),
     url(r'^user$',views.user),
@@ -162,4 +164,10 @@ urlpatterns = patterns('',
     url(r'^resource/rack/ajax/get$', resource_rack_views.ajax_rack_get),
     url(r'^resource/rack/eidt/(?P<pk>\d+)$', resource_rack_views.rack_edit,name='resource_rack_edit'),
     url(r'^resource/rack/delete/(?P<pk>\d+)$', resource_rack_views.rack_delete,name='resource_rack_delete'),
+    url(r'^application/add$', application_views.application_add),
+    url(r'^application/get$', application_views.application_get,name='application_get'),
+    url(r'^application/search$', application_views.application_search,name='application_search'),
+    url(r'^application/(?P<pk>\d+)$', application_views.application_edit,name='application_edit'),
+    url(r'^application/delete/(?P<pk>\d+)$', application_views.application_delete,name='application_delete'),
+    url(r'^application/detail/(?P<pk>\d+)$', application_views.application_detail,name='application_detail'),
 )

@@ -1,0 +1,49 @@
+{% extends 'base.html'  %}
+{% block application %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">服务详细信息</h3> 
+   <p>  <label for="{{ object.service.id_for_label }}">服务名:</label>
+                    {{ object.service }} </p>
+   <p>  <label for="{{ object.service_level.id_for_label }}">服务级别:</label>
+                    {{ object.service_level }} </p>
+   <p>  <label for="{{ object.auto_deploy.id_for_label }}">一键部署:</label>
+                    {{ object.auto_deploy }} </p>
+   <p>  <label for="{{ object.w_domain.id_for_label }}">外网访问域名:</label>
+                    {{ object.w_domain }} </p>
+   <p>  <label for="{{ object.l_domain.id_for_label }}">内网访问域名:</label>
+                    {{ object.l_domain }} </p>
+   <p>  <label for="{{ object.l_dns.id_for_label }}">内网DNS域名:</label>
+                    {{ object.l_dns }} </p>
+   <p>  <label for="{{ object.app_user.id_for_label }}">应用负责人:</label>
+                    {{ object.app_user }} </p>
+   <p>  <label for="{{ object.hostname.id_for_label }}">主机名:</label>
+                    {{ object.hostname }} </p>
+   <p>  <label for="{{ object.proxy.id_for_label }}">正向代理:</label>
+                    {{ object.proxy }} </p>
+   <p>  <label for="{{ object.nginx.id_for_label }}">nginx地址:</label>
+                    {{ object.nginx }} </p>
+   <p>  <label for="{{ object.lan_ip.id_for_label }}">内网IP:</label>
+                    {{ object.lan_ip }} </p>
+   <p>  <label for="{{ object.nas_ip.id_for_label }}">NAS IP:</label>
+                    {{ object.nas_ip }} </p>
+   <p>  <label for="{{ object.keepalived_ip.id_for_label }}">keepalived IP:</label>
+                    {{ object.keepalived_ip }} </p>
+   <p>  <label for="{{ object.exec_user.id_for_label }}">执行应用用户:</label>
+                    {{ object.exec_user }} </p>
+   <p>  <label for="{{ object.app_path_port.id_for_label }}">应用路径与端口:</label>
+                    {{ object.app_path_port }} </p>
+   <p>  <label for="{{ object.config_file.id_for_label }}">配置文件:</label>
+                    {{ object.config_file }} </p>
+   <p>  <label for="{{ object.firewall_port.id_for_label }}">防火墙端口:</label>
+                    {{ object.firewall_port }} </p>
+   <p>  <label for="{{ object.cash.id_for_label }}">涉及现金流:</label>
+                    {{ object.cash }} </p>
+   <p>  <label for="{{ object.user_num.id_for_label }}">用户量:</label>
+                    {{ object.user_num }} </p>
+   <p>  <label for="{{ object.key_app_related.id_for_label }}">重要应用关联性:</label>
+                    {{ object.key_app_related }} </p>
+   <p>  <label for="{{ object.internet_app.id_for_label }}">社会影响:</label>
+                    {{ object.internet_app }} </p>
+<a href="javascript:history.go(-1);">返回</a>   
+</div>
+{% endblock %}

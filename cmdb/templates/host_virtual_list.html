@@ -58,7 +58,7 @@
     <div class="pagination">
     <span class="step-links">
         {% if objects.has_previous %}
-            {% if search_value %}
+            {% if search_key %}
             <a href="?page={{ objects.previous_page_number }}&search_key={{search_key}}&search_value={{search_value}}">前一页</a>
             {% else %}
             <a href="?page={{ objects.previous_page_number }}">前一页</a>
@@ -71,7 +71,7 @@
         </span>
 
         {% if objects.has_next %}
-            {% if search_value %}
+            {% if search_key %}
             <a href="?page={{ objects.next_page_number }}&search_key={{search_key}}&search_value={{search_value}}">下一页</a>
             {% else %}
             <a href="?page={{ objects.next_page_number }}">下一页</a>

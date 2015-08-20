@@ -26,8 +26,8 @@ def virtual_get(request):
         context = {'objects':objects,'total':num}
         return render(request,'host_virtual_list.html',context)
 
-@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 def virtual_add(request):
     form = HostVirtualForm(request.POST or None)
     if form.is_valid():
@@ -40,8 +40,8 @@ def virtual_add(request):
     #    return HttpResponse(form.errors)
     return render(request, 'host_virtual_form.html', {'form':form})
 
-@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 def virtual_edit(request,pk):
     object = get_object_or_404(HostVirtual,pk=pk)
     object_data = model_to_dict(object)
@@ -55,8 +55,8 @@ def virtual_edit(request,pk):
         return redirect('host_virtual_get')
     return render(request,'host_virtual_form.html', {'form':form})
 
-@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostvirtual',raise_exception=True)
 def virtual_delete(request,pk):
     object= get_object_or_404(HostVirtual,pk=pk)
     object_data = object.__dict__.copy()

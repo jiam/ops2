@@ -248,3 +248,32 @@ class Accessories_Disk(models.Model):
     Status = models.IntegerField(blank=True,null=True)
     #Host_IP =  models.IPAddressField(blank=True,null=True)
     Host_SN = models.CharField(max_length=30)
+
+
+class Application(models.Model):
+    service =  models.CharField(max_length=100)
+    service_level =  models.CharField(max_length=100)
+    auto_deploy  =  models.CharField(max_length=100,blank=True,null=True)
+    w_domain  =  models.CharField(max_length=200,blank=True,null=True)
+    l_domain  =  models.CharField(max_length=200,blank=True,null=True)
+    l_dns  =  models.CharField(max_length=100,blank=True,null=True)
+    app_user  =  models.CharField(max_length=100,blank=True,null=True)
+    hostname  =  models.CharField(max_length=200,blank=True,null=True)
+    proxy =  models.CharField(max_length=100,blank=True,null=True)
+    nginx =  models.CharField(max_length=100,blank=True,null=True)
+    lan_ip =  models.CharField(max_length=200,blank=True,null=True)
+    nas_ip =  models.CharField(max_length=100,blank=True,null=True)
+    keepalived_ip =  models.CharField(max_length=100,blank=True,null=True)
+    exec_user =  models.CharField(max_length=100,blank=True,null=True)
+    app_path_port = models.CharField(max_length=1000,blank=True,null=True)
+    config_file = models.CharField(max_length=1000,blank=True,null=True)
+    firewall_port = models.CharField(max_length=100,blank=True,null=True)
+    cash = models.CharField(max_length=100,blank=True,null=True)
+    user_num = models.CharField(max_length=100,blank=True,null=True)
+    key_app_related = models.CharField(max_length=100,blank=True,null=True)
+    internet_app = models.CharField(max_length=100,blank=True,null=True)
+    
+    
+    
+
+

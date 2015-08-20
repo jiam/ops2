@@ -1,12 +1,15 @@
 {% extends 'base.html'  %}
-{% block accessories_memory %}
+{% block application %}
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1 class="page-header">配件内存</h1>
-    <a class="btn btn-primary" href="/cmdb/accessories/memory/add"><i class="fa fa-plus"></i>添加</a>
-    <form class="navbar-form navbar-right" method='get' action='/cmdb/accessories/memory/search'> {% csrf_token %}
+    <h1 class="page-header">重要服务</h1>
+    <a class="btn btn-primary" href="/cmdb/application/add"><i class="fa fa-plus"></i>添加</a>
+    <form class="navbar-form navbar-right" method='get' action='/cmdb/application/search'> {% csrf_token %}
             <select id="id_search_key"  name="search_key" class="form-control">
-              <option value="SN">内存SN</option>
-              <option value="Host_SN">主机SN</option>
+              <option value="service">服务名</option>
+              <option value="service_level">服务级别</option>
+              <option value="auto_deploy">一键发布</option>
+              <option value="app_user">应用负责人</option>
+              <option value="lan_ip">内网IP</option>
             </select>
             <input id="id_search_value"type="text" name="search_value" class="form-control">
             {% if search_key %}
@@ -18,25 +21,29 @@
             <input type="submit" class="form-control" value="查询">
     </form>
     <table class="table table-condensed"> 
-        <tbody>
+        <thead>
             <tr> 
-                <th>SN</th> 
-                <th>状态</th> 
-                <th>内存型号</th> 
-                <th>主机SN</th> 
+                <th>服务名</th> 
+                <th>服务级别</th> 
+                <th>一键发布</th> 
+                <th>应用负责人</th> 
                 <th>编辑</th> 
                 <th>删除</th> 
            </tr> 
+        </thead>
+        <tbody>
            {% for object in objects %}
            <tr> 
-                <td>{{object.SN}}</td> 
-                <td>{{object.Status}}</td> 
-                <td>{{object.Memory_Type}}</td> 
-                <td>{{object.Host_SN}}</td> 
-                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'accessories_memory_edit' object.id %}">编辑</a></td> 
-                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'accessories_memory_delete' object.id %}">删除</a></td> 
-          </tr> 
-          {% endfor %}
+                <td>{{object.service}}</td> 
+                <td>{{object.service_level}}</td> 
+                <td>{{object.auto_deploy}}</td> 
+                <td>{{object.app_user}}</td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'application_edit' object.id %}">编辑</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'application_delete' object.id %}">删除</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'application_detail' object.id %}">详情</a></td> 
+           </tr> 
+           {% endfor %}
+        </tbody>
      </table>
     <div class="pagination">
     <span class="step-links">

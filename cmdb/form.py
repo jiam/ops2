@@ -533,3 +533,126 @@ class RackForm(ModelForm):
                 'required':'True',
                 'autofocus':'True'}),
         }
+
+
+class ApplicationForm(ModelForm):
+    class Meta:
+        model = Application
+        labels = {
+            'service':'服务名',
+            'service_level':'服务级别',
+            'auto_deploy':'一键发布',
+            'w_domain':'外网访问域名',
+            'l_domain':'内网访问域名',
+            'l_dns':'内部DNS域名',
+            'app_user':'应用负责人',
+            'hostname':'主机名',
+            'proxy':'正向代理',
+            'nginx':'nginx地址',
+            'lan_ip':'内网IP',
+            'wan_ip':'外网IP',
+            'nas_ip':'NAS IP',
+            'keepalived_ip':'keepalived IP',
+            'exec_user':'执行应用用户',
+            'app_path_port':'应用路径与端口',
+            'config_file':'配置文件',
+            'firewall_port':'防火墙端口',
+            'cash':'设计现金流(是/否)',
+            'user_num':'用户量(最低超过每天100人使用)',
+            'key_app_related':'重要的应用关联性(是/否)',
+            'internet_app':'社会影响(属于互联网应用，是/否)',
+        }
+        widgets = {
+            'service':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'required':'True',
+                'autofocus':'True'}),
+            'service_level':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'required':'True',
+                'autofocus':'True'}),
+            'auto_deploy':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'w_domain':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'l_domain':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'l_dns':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'app_user':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'hostname':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'proxy':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'nginx':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'lan_ip':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'nas_ip':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'keepalived_ip':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'exec_user':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'app_path_port':Textarea(attrs={
+                'class':'form-control',
+                'rows':2,
+                'cols':24,
+                'autofocus':'True'}),
+            'config_file':Textarea(attrs={
+                'class':'form-control',
+                'rows':4,
+                'cols':60,
+                'autofocus':'True'}),
+            'firewall_port':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'firewall_port':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'cash':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'user_num':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'key_app_related':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'internet_app':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+        }

@@ -555,3 +555,30 @@ def search(request):
     query_set =  urllib.urlopen(solr_url).read()
     #items = json.loads(query_set)
     return HttpResponse(query_set)
+
+
+@csrf_exempt
+def application_add(request):
+    json_str = request.body
+    data = json.loads(json_str)
+    token = data['token']
+    try:
+        result = Token.objects.get(key=token)
+        user_id = result.user_id
+        request.user = User.objects.get(id=user_id)
+    except Token.DoesNotExist:
+        result = {'result':'auth failed'}
+        response = json.dumps(result)
+        return HttpResponse(response)
+    try:
+        params = data['params']
+        host = Application(**params)
+        host.save()
+        cmdb_log.log_addition(request,host,params['service'],params)
+        result = {'result':{'status':1,'info':'service host add sucesses'}}
+        response = json.dumps(result)
+        return HttpResponse(response)
+    except Exception,e:
+        result = {'result':{'status':0,'info':str(e)}}
+        response = json.dumps(result)
+        return HttpResponse(response)

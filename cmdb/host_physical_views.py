@@ -26,8 +26,8 @@ def physical_get(request):
         context = {'objects':objects,'total':num}
         return render(request,'host_physical_list.html',context)
 
-@permission_required('cmdb.change_hostphysical',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_add(request):
     form = HostPhysicalForm(request.POST or None)
     if form.is_valid():
@@ -40,8 +40,8 @@ def physical_add(request):
     #    return HttpResponse(form.errors)
     return render(request, 'host_physical_form.html', {'form':form})
 
-@permission_required('cmdb.change_hostphysical',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_edit(request,pk):
     object = get_object_or_404(HostPhysical,pk=pk)
     object_data = model_to_dict(object)
@@ -55,8 +55,8 @@ def physical_edit(request,pk):
         return redirect('host_physical_get')
     return render(request,'host_physical_form.html', {'form':form})
 
-@permission_required('cmdb.change_hostphysical',raise_exception=True)
 @login_required
+@permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_delete(request,pk):
     object= get_object_or_404(HostPhysical,pk=pk)
     object_data = object.__dict__.copy()
