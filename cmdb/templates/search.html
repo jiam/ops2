@@ -62,6 +62,33 @@
     {% endfor %}
   </tbody>
 {% endif %}
+{% if applications %}
+<table class="table table-striped">
+  <caption>重要服务</caption>
+  <thead>
+    <tr>
+      <th>服务名</th>
+      <th>服务级别</th>
+      <th>nginx</th>
+      <th>内网域名</th>
+      <th>外网域名</th>
+      <th>应用负责人</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for application in  applications %}
+    <tr>
+      <td>{{ application.service | first }} </td>
+      <td>{{ application.service_level | first }} </td>
+      <td>{{ application.nginx | first }} </td>
+      <td>{{ application.l_domain | first }} </td>
+      <td>{{ application.w_domain | first }} </td>
+      <td>{{ application.app_user | first }} </td>
+      <td><a class="playitbtn tryitbtnsyntax" href="{% url 'application_detail' application.django_id|first %}">详情</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+{% endif %}
 </div>
 
 {% endblock %}

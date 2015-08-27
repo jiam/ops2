@@ -21,12 +21,15 @@ def search(request):
     items = json.loads(query_set)['response']['docs']
     hostphysicals = []
     hostvirtuals = []
+    applications = []
     for item in items:
         if 'cmdb.hostphysical' in item['django_ct']:
             hostphysicals.append(item)
         if 'cmdb.hostvirtual' in item['django_ct']:
             hostvirtuals.append(item)
-    context = {'hostphysicals':hostphysicals,'hostvirtuals':hostvirtuals}
+        if 'cmdb.application' in item['django_ct']:
+            applications.append(item)
+    context = {'hostphysicals':hostphysicals,'hostvirtuals':hostvirtuals,'applications':applications}
     return render(request,'search.html',context)
     #return HttpResponse(json.dumps(context)) 
 

@@ -52,3 +52,16 @@ class hostphysicalIndex(indexes.SearchIndex,indexes.Indexable):
         return obj.department.Department_Name
     def prepare_service_name(self, obj):
         return obj.service.Service_Name
+class application(indexes.SearchIndex,indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    service = indexes.CharField(model_attr='service')
+    service_level = indexes.CharField(model_attr='service_level')
+    w_domain = indexes.CharField(model_attr='w_domain',null=True)
+    l_domain = indexes.CharField(model_attr='l_domain',null=True)
+    l_dns = indexes.CharField(model_attr='l_dns')
+    nginx = indexes.CharField(model_attr='nginx',null=True)
+    lan_ip = indexes.CharField(model_attr='lan_ip',null=True)
+    def get_model(self):
+        return Application
+    def index_queryset(self,using=None):
+        return self.get_model().objects.all()
