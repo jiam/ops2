@@ -170,4 +170,5 @@ urlpatterns = patterns('',
     url(r'^application/(?P<pk>\d+)$', application_views.application_edit,name='application_edit'),
     url(r'^application/delete/(?P<pk>\d+)$', application_views.application_delete,name='application_delete'),
     url(r'^application/detail/(?P<pk>\d+)$', application_views.application_detail,name='application_detail'),
+    url(r'^application/export$', application_views.application_export,name='application_export'),
 )

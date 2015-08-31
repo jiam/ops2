@@ -3,7 +3,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="page-header">重要服务</h1>
     <a class="btn btn-primary" href="/cmdb/application/add"><i class="fa fa-plus"></i>添加</a>
-    <form class="navbar-form navbar-right" method='get' action='/cmdb/application/search'> {% csrf_token %}
+    <form id="id_search_form" name="search_name" class="navbar-form navbar-right" method='get' action=''> {% csrf_token %}
             <select id="id_search_key"  name="search_key" class="form-control">
               <option value="service">服务名</option>
               <option value="service_level">服务级别</option>
@@ -20,7 +20,16 @@
                 $("#id_search_value ").val("{{search_value}}"); 
             </script>
             {% endif %}
-            <input type="submit" class="form-control" value="查询">
+            <input type="submit" class="form-control" onclick="onSearch()" value="查询">
+            <input type="submit" class="form-control" onclick="onExport()" value="导出">
+            <script>
+            function onExport() {
+                $("#id_search_form").attr("action", "/cmdb/application/export");
+            }
+            function onSearch() {
+                $("#id_search_form").attr("action", "/cmdb/application/search");
+            }
+            </script>
     </form>
     <table class="table table-condensed"> 
         <thead>

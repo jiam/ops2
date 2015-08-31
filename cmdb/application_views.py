@@ -7,6 +7,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required,permission_required
 from form import ApplicationForm
 import cmdb_log
+from excellib import create_application_excel
 
 @login_required
 def application_get(request):
@@ -89,3 +90,19 @@ def application_search(request):
 def application_detail(request,pk):
     object = get_object_or_404(Application,pk=pk)
     return render(request,'application_detail.html', {'object':object})
+
+@login_required
+def application_export(request):
+    if request.method == 'GET':
+        search_key = request.GET['search_key']
+        search_value = request.GET['search_value']
+        if search_value:
+            params = { search_key+'__contains':search_value}
+            objects = Application.objects.filter(**params).order_by(search_key)
+        else:
+            objects = Application.objects.all().order_by(search_key)
+        xls,fname = create_application_excel(objects)
+        response = HttpResponse(mimetype="application/ms-excel")
+        response['Content-Disposition'] = 'attachment;filename=%s.xls' % fname
+        xls.save(response)
+        return response
