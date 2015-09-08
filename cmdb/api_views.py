@@ -582,3 +582,34 @@ def application_add(request):
         result = {'result':{'status':0,'info':str(e)}}
         response = json.dumps(result)
         return HttpResponse(response)
+
+@csrf_exempt
+def application_get(request):
+    json_str = request.body
+    data = json.loads(json_str)
+    token = data['token']
+    try:
+        result = Token.objects.get(key=token)
+        user_id = result.user_id
+        request.user = User.objects.get(id=user_id)
+    except Token.DoesNotExist:
+        result = {'result':'auth failed'}
+        response = json.dumps(result)
+        return HttpResponse(response)
+    try:
+        if 'params' in data:
+            params = data['params']
+            applications = Application.objects.filter(**params)
+            total = applications.count()
+            applications = serializers.serialize("json",applications)
+            response = '{"result":{"total":%s,"data":%s}}' % (total,applications)
+            return HttpResponse(response)
+        else:
+            applications = Application.objects.all()
+            total = applications.count()
+            applications = serializers.serialize("json",applications,use_natural_keys=True)
+            response = '{"result":{"total":%s,"data":%s}}' % (total,applications)
+            return HttpResponse(applications)
+
+    except Exception,e:
+        result = {'result':{'status':0,'info':str(e)}}
