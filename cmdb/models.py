@@ -272,6 +272,10 @@ class Application(models.Model):
     user_num = models.CharField(max_length=100,blank=True,null=True)
     key_app_related = models.CharField(max_length=100,blank=True,null=True)
     internet_app = models.CharField(max_length=100,blank=True,null=True)
+    job_name = models.CharField(max_length=100,blank=True,null=True)
+    svn_url = models.CharField(max_length=100,blank=True,null=True)
+    scm_mark = models.CharField(max_length=100,blank=True,null=True)
+    backup_mark = models.CharField(max_length=100,blank=True,null=True)
     
     
     

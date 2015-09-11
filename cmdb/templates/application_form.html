@@ -23,4 +23,49 @@
 
 
 </div>
+<script>
+ $.ajax({
+              async: false,
+              type: "GET",
+              url: "/cmdb/permit",
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        if(result.permit==1) {
+                            $("#id_service").attr('readonly',true);
+                            $("#id_service_level").attr('readonly',true);
+                            $("#id_config_file").attr('readonly',true);
+                            $("#id_firewall_port").attr('readonly',true);
+                            $("#id_auto_deploy").attr('readonly',true);
+                            $("#id_w_domain").attr('readonly',true);
+                            $("#id_l_domain").attr('readonly',true);
+                            $("#id_l_dns").attr('readonly',true);
+                            $("#id_app_user").attr('readonly',true);
+                            $("#id_hostname").attr('readonly',true);
+                            $("#id_proxy").attr('readonly',true);
+                            $("#id_nginx").attr('readonly',true);
+                            $("#id_lan_ip").attr('readonly',true);
+                            $("#id_nas_ip").attr('readonly',true);
+                            $("#id_keepalived_ip").attr('readonly',true);
+                            $("#id_exec_user").attr('readonly',true);
+                            $("#id_app_path_port").attr('readonly',true);
+                            $("#id_cash").attr('readonly',true);
+                            $("#id_user_num").attr('readonly',true);
+                            $("#id_key_app_related").attr('readonly',true);
+                            $("#id_internet_app").attr('readonly',true);
+                            }
+                        else{
+                            
+                            $("#id_job_name").attr('readonly',true);
+                            $("#id_svn_url").attr('readonly',true);
+                            $("#id_scm_mark").attr('readonly',true);
+                            $("#id_backup_mark").attr('readonly',true);
+                        }
+                    
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+</script>
 {% endblock %}

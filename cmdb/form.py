@@ -561,6 +561,10 @@ class ApplicationForm(ModelForm):
             'user_num':'用户量(最低超过每天100人使用)',
             'key_app_related':'重要的应用关联性(是/否)',
             'internet_app':'社会影响(属于互联网应用，是/否)',
+            'job_name':'Job名称',
+            'svn_url':'SVN地址',
+            'scm_mark':'scm备注',
+            'backup_mark':'备份特殊性',
         }
         widgets = {
             'service':TextInput(attrs={
@@ -652,6 +656,22 @@ class ApplicationForm(ModelForm):
                 'size':24,
                 'autofocus':'True'}),
             'internet_app':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'job_name':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'svn_url':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'scm_mark':TextInput(attrs={
+                'class':'form-control',
+                'size':24,
+                'autofocus':'True'}),
+            'backup_mark':TextInput(attrs={
                 'class':'form-control',
                 'size':24,
                 'autofocus':'True'}),

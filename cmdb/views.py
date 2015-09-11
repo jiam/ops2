@@ -170,3 +170,14 @@ def get_op_detail(request,pk):
     object = get_object_or_404(LogEntry,pk=pk)
     #return render(request,'oplog_detail.html', {'object':object})
     return HttpResponse(object.change_message)
+
+
+@login_required
+def get_permit(request):
+    groupnames = request.user.groups.values_list('name',flat=True)
+    if 'config_manage' in groupnames:
+        permit = 1
+    else:
+        permit = 0
+    context = {'permit':permit}
+    return HttpResponse(json.dumps(context))
