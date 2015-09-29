@@ -235,114 +235,225 @@ class HostPhysicalForm(ModelForm):
         'maxlength':30,
         'size':5,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',
         'autofocus':'True'}))
     UseInfo = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':100,
+        'class':'form-control',
         'size':51,
         'placeholder':'必填',
         'required':'True',}))
     User = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':5,
         'placeholder':'必填',
         'required':'True',}))
     Manage_IP = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         'placeholder':'必填',
         'required':'True',}))
     RAC_IP = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         }),
         required=False)
     VIP = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         }),
         required=False)
     NAS_IP = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         }),
         required=False)
     Memory_Size = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':3,
         'placeholder':'必填',
         'required':'True',}))
     Disk_Size = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':3,
         'placeholder':'必填',
         'required':'True',}))
     Rack_Position = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':4,
         'placeholder':'必填',
         'required':'True',}))
     Asset_SN = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         'placeholder':'必填',
         'required':'True',}))
     SN = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':12,
         'placeholder':'必填',
         'required':'True',}))
     CPU_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':2,
         }),
         initial=0)
     Memory_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':2,
         }),
         initial=0)
     Disk_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':2,
         }),
         initial=0)
     HBA_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':2,
         }),
         initial=0)
     PCIE_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':30,
         'size':2,
         }),
         initial=0)
    
     NIC_Number = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
         'maxlength':2,
         'size':2,
         }),
         initial=0)
     Remarks = forms.CharField(widget=forms.Textarea(attrs={
+        'class':'form-control',
         'rows':2}),
         required=False,
         )
     Change_Info = forms.CharField(widget=forms.Textarea(attrs={
+        'class':'form-control',
         'rows':2}),
         required=False,
         )
+    department = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Department.objects.all())
+    service = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Service.objects.all())
+    os = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=OS.objects.all())
+    kernel = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Kernel.objects.all())
+    idc = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=IDC.objects.all())
+    zone = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Zone.objects.all())
+    rack = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Rack.objects.all())
+    vendor = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Vendor.objects.all())
+    model = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Model.objects.all())
+    cpu = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=CPU.objects.all())
+    memory = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Memory.objects.all())
+    disk = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Disk.objects.all())
+    raid = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=RAID.objects.all())
+    hba = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=HBA.objects.all())
+    pcie = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=PCIE.objects.all())
+    nic = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=NIC.objects.all())
 
     RAID_Battery_CHOICES = ((0,'无'),(1,'有'))
-    RAID_Battery = forms.ChoiceField(label='RAID电池',widget=forms.Select(),choices=RAID_Battery_CHOICES)
-    
     RAID_CHOICES = ((0,'无'),(1,'RAID 0'),(2,'RAID 1'),(3,'RAID 5'),(4,'RAID 10'),(5,'RAID 1+5'),(6,'RAID 1+10'))
     Status_CHOICES = ((0,'使用'),(1,'空闲'),(2,'故障'),(3,'备用'))
-    RAID_Level = forms.ChoiceField(widget=forms.Select(),choices=RAID_CHOICES)
-    Status = forms.ChoiceField(widget=forms.Select(),choices=Status_CHOICES)
-    Purchasing_Time = forms.DateField(initial='2015-01-01')
-    Guarantee_Time = forms.DateField(initial='2015-01-01')
-    Up_Time = forms.DateField(initial='2015-01-01')
-    Change_Time = forms.DateField(initial='2015-01-01')
+    Status = forms.ChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        choices=Status_CHOICES,
+       )
+    RAID_Level = forms.ChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        choices=RAID_CHOICES,
+       )
+    RAID_Battery = forms.ChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        choices=RAID_Battery_CHOICES,
+       )
+    Purchasing_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Guarantee_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Up_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Change_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
     class Meta:
         model = HostPhysical
         #fields = ['HostName','Status','Asset_SN','vendor','model','SN']
@@ -355,64 +466,117 @@ class HostVirtualForm(ModelForm):
         'size':5,
         'placeholder':'必填',
         'required':'True',
+        'class':'form-control',
         'autofocus':'True'}))
+    department = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Department.objects.all())
+    service = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Service.objects.all())
+    os = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=OS.objects.all())
+    kernel = forms.ModelChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        queryset=Kernel.objects.all())
     Use_Info = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':100,
         'size':51,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',}))
     User = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':5,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',}))
     Manage_IP = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':12,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',}))
     VIP = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':12,
+        'class':'form-control',
         }),
         required=False)
     NAS_IP = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':12,
+        'class':'form-control',
+        }),
+        required=False)
+    Physical_Host_IP = forms.CharField(widget=forms.TextInput(attrs={
+        'maxlength':30,
+        'size':12,
+        'class':'form-control',
         }),
         required=False)
     Memory_Size = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':3,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',}))
     Disk_Size = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':3,
         'placeholder':'必填',
+        'class':'form-control',
         'required':'True',}))
     vCPU_Number = forms.CharField(widget=forms.TextInput(attrs={
         'maxlength':30,
         'size':2,
+        'class':'form-control',
         }),
         initial=0)
 
     Remarks = forms.CharField(widget=forms.Textarea(attrs={
+        'class':'form-control',
         'rows':2}),
         required=False,
         )
     Change_Info = forms.CharField(widget=forms.Textarea(attrs={
+        'class':'form-control',
         'rows':2}),
         required=False,
         )
 
 
     Status_CHOICES = ((0,'使用'),(1,'空闲'),(2,'故障'),(3,'备用'))
-    Status = forms.ChoiceField(widget=forms.Select(),choices=Status_CHOICES)
-    Application_Time = forms.DateField(initial='2015-01-01')
-    Use_Period = forms.DateField(initial='2015-01-01')
-    Up_Time = forms.DateField(initial='2015-01-01')
-    Change_Time = forms.DateField(initial='2015-01-01')
+    Status = forms.ChoiceField(widget=forms.Select(attrs={
+        'class':'form-control',
+        }),
+        choices=Status_CHOICES,
+       )
+    Application_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Change_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Use_Period = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
+    Up_Time = forms.DateField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+    }),
+    initial='2015-01-01'
+    ,)
     class Meta:
         model = HostVirtual
         #fields = ['HostName','Status','Asset_SN','vendor','model','SN']

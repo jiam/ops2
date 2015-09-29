@@ -3,62 +3,132 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
     <h3 class="page-header">虚拟主机</h3> 
     <div>
-        <form method="post">{% csrf_token %}
+        <form  method="post">{% csrf_token %}
                     {# 基本信息 #}
             <div class = "row">
-                    <label for="{{ form.HostName.id_for_label }}">主机名:</label>
-                    {{ form.HostName }}
+                <div class = "col-lg-1">
+                    <label  for="{{ form.HostName.id_for_label }}">主机名:</label>
+                </div>
+                    <div class = "col-lg-2">
+                        {{ form.HostName }}
+                    </div>
+                <div class = "col-lg-1">
                     <label for="{{ form.Status.id_for_label }}">状态:</label>
-                    {{ form.Status }}
+                </div>
+                    <div class = "col-lg-2">
+                        {{ form.Status }}
+                    </div>
+                <div class = "col-lg-1">
                     <label for="{{ form.department.id_for_label }}">部门:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.department }}
+                </div>
+                <div class = "col-lg-1">
                     <label for="{{ form.service.id_for_label }}">业务:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.service }}
+                </div>
             </div>
             <div class = "row">
+                <div class = "col-lg-1">
                     <label for="{{ form.UseInfo.id_for_label }}">用途:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Use_Info }}
+                </div>
+                <div class = "col-lg-1">
                     <label for="{{ form.User.id_for_label }}">用户:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.User }}
+                </div>
+                <div class = "col-lg-1">
                     <label for="{{ form.Manage_IP.id_for_label }}">管理IP:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Manage_IP }}
+                </div>
             </div>
             <hr>
                     {# 系统信息 #}
             <div class='row'>
-                    <label for="{{ form.os.id_for_label }}">系统:</label>
+                <div class = "col-sm-2">
+                    <label for="{{ form.os.id_for_label }}">操作系统:</label>
+                </div>
+                <div class = "col-sm-2">
                     {{ form.os }}
-                    <label for="{{ form.kerenl.id_for_label }}">内核:</label>
+                </div>
+                <div class = "col-sm-2">
+                    <label for="{{ form.kerenl.id_for_label }}">内核版本:</label>
+                </div>
+                <div class = "col-sm-2">
                     {{ form.kernel }}
-                    <label for="{{ form.vCPU_Number.id_for_label }}">逻辑CPU个数:</label>
+                </div>
+                <div class = "col-sm-2">
+                    <label for="{{ form.vCPU_Number.id_for_label }}">CPU个数:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.vCPU_Number }}
-                    <label for="{{ form.Memory_Size.id_for_label }}">内存大小:</label>
-                    {{ form.Memory_Size }}
-                    <label for="{{ form.Disk_Size.id_for_label }}">硬盘大小:</label>
-                    {{ form.Disk_Size }}
-            </div>
+                </div>
+            </div>    
             <div class='row'>
+                <div class = "col-lg-2">
+                    <label for="{{ form.Memory_Size.id_for_label }}">内存大小:</label>
+                </div>
+                <div class = "col-lg-2">
+                    {{ form.Memory_Size }}
+                </div>
+                <div class = "col-lg-2">
+                    <label for="{{ form.Disk_Size.id_for_label }}">硬盘大小:</label>
+                </div>
+                <div class = "col-lg-2">
+                    {{ form.Disk_Size }}
+                </div>
+                <div class = "col-lg-2">
                     <label for="{{ form.VIP.id_for_label }}">VIP:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.VIP }}
+                </div>
+            </div>    
+            <div class='row'>
+                <div class = "col-lg-2">
                     <label for="{{ form.NAS_IP.id_for_label }}">NAS IP:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.NAS_IP }}
+                </div>
+                <div class = "col-lg-2">
                     <label for="{{ form.Physical_Host_IP.id_for_label }}">宿主机IP:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Physical_Host_IP }}
+                </div>
              </div>
             <hr>
             <hr>
                     {# 其他信息 #}
             <div class='row'>
+                <div class = "col-lg-2">
                     <label for="{{ form.Application_Time.id_for_label }}">申请日期:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Application_Time }}
+                </div>
                      <script>
                     $('#id_Application_Time').datepicker({
                        format: "yyyy-mm-dd",
                        language: "zh-CN"
                     });
                     </script>
+                <div class = "col-lg-2">
                     <label for="{{ form.Up_Time.id_for_label }}">开通日期:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Up_Time }}
+                </div>
                      <script>
                     $('#id_Up_Time').datepicker({
                        format: "yyyy-mm-dd",
@@ -67,16 +137,24 @@
                     </script>
              </div>
              <div class='row'>
+                <div class = "col-lg-2">
                     <label for="{{ form.Use_Period.id_for_label }}">截止日期:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Use_Period }}
+                </div>
                      <script>
                     $('#id_Use_Period').datepicker({
                        format: "yyyy-mm-dd",
                        language: "zh-CN"
                     });
                     </script>
+                <div class = "col-lg-2">
                     <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
+                </div>
+                <div class = "col-lg-2">
                     {{ form.Change_Time }}
+                </div>
                      <script>
                     $('#id_Change_Time').datepicker({
                        format: "yyyy-mm-dd",
@@ -84,25 +162,27 @@
                     });
                     </script>
              </div>
-             <div class='row'>
-                    <label for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
-                    {{ form.Change_Info }}
-                    <label for="{{ form.Remarks.id_for_label }}">备注:</label>
+                <div class = "form-group">
+                    <label class="control-label"  for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
+                        {{ form.Change_Info }}
+                </div>
+                <div class = "form-group">
+                    <label class="control-label" for="{{ form.Remarks.id_for_label }}">备注:</label>
                     {{ form.Remarks }}
-            </div>
+                </div>
     
-    <input
-            value = '保存'
-            type  = 'submit' 
-            class = 'btn btn-success' 
-    />
-     <a
-            class = 'btn'
-            href  = '/cmdb/host/physical/get'
-        >
-            取消
-        </a>
-</form>
+               <input
+                      value = '保存'
+                      type  = 'submit' 
+                      class = 'btn btn-success' 
+              />
+               <a
+                      class = 'btn'
+                      href  = '/cmdb/host/physical/get'
+                  >
+                      取消
+                  </a>
+         </form>
      </div>
 </div>
 {% endblock %}
