@@ -7,6 +7,7 @@
             <select id="id_search_key"  name="search_key" class="form-control">
               <option value="HostName">主机名</option>
               <option value="Manage_IP">管理IP</option>
+              <option value="Physical_Host_IP">宿主机IP</option>
               <option value="User">使用者</option>
               <option value="Use_Info">用途</option>
             </select>
@@ -25,6 +26,7 @@
                 <th>主机名</th> 
                 <th>主机状态</th> 
                 <th>管理IP</th> 
+                <th>宿主机IP</th> 
                 <th>使用者</th> 
                 <th>用途</th> 
                 <th>编辑</th> 
@@ -46,6 +48,7 @@
                     <td>备用</td> 
                 {% endif %}
                 <td>{{object.Manage_IP}}</td> 
+                <td>{{object.Physical_Host_IP}}</td> 
                 <td>{{object.User}}</td> 
                 <td>{{object.Use_Info}}</td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_virtual_edit' object.id %}">编辑</a></td> 
