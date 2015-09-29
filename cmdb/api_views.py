@@ -551,7 +551,10 @@ def search(request):
         response = json.dumps(result)
         return HttpResponse(response)
     q = data['params'] 
-    solr_url="http://127.0.0.1:8983/solr/cmdb/select?q=\"" + urllib.quote(q.encode('utf-8')) + "\"&rows=1000&wt=json&indent=true"
+    if q.find("*") != -1:
+        solr_url="http://127.0.0.1:8983/solr/cmdb/select?q=" + urllib.quote(q.encode('utf-8')) + "&rows=1000&wt=json&indent=true"
+    else:
+        solr_url="http://127.0.0.1:8983/solr/cmdb/select?q=\"" + urllib.quote(q.encode('utf-8')) + "\"&rows=1000&wt=json&indent=true"
     query_set =  urllib.urlopen(solr_url).read()
     #items = json.loads(query_set)
     return HttpResponse(query_set)
