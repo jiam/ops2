@@ -416,7 +416,7 @@ class HostPhysicalForm(ModelForm):
         }),
         queryset=NIC.objects.all())
 
-    RAID_Battery_CHOICES = ((0,'无'),(1,'有'))
+    RAID_Battery_CHOICES = ((0,'无'),(1,'有'),(2,'N/A'))
     RAID_CHOICES = ((0,'无'),(1,'RAID 0'),(2,'RAID 1'),(3,'RAID 5'),(4,'RAID 10'),(5,'RAID 1+5'),(6,'RAID 1+10'))
     Status_CHOICES = ((0,'使用'),(1,'空闲'),(2,'故障'),(3,'备用'))
     Status = forms.ChoiceField(widget=forms.Select(attrs={
