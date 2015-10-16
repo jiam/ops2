@@ -56,6 +56,7 @@
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_edit' object.id %}">编辑</a></td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_delete' object.id %}">删除</a></td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_detail' object.id %}">详情</a></td> 
+                <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_copy' object.id %}">复制</a></td> 
              </tr> 
           {% endfor %}
              </tbody> 

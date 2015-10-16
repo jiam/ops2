@@ -57,6 +57,19 @@ def physical_edit(request,pk):
 
 @login_required
 @permission_required('cmdb.change_hostphysical',raise_exception=True)
+def physical_copy(request,pk):
+    copy_id = pk
+    source = HostPhysical.objects.filter(id=copy_id)
+    mid = source.values()[0]
+    mid.pop('id')
+    mid['HostName']= mid['HostName']+'copy'
+    dest = HostPhysical(**mid)
+    cmdb_log.log_addition(request,dest,dest.HostName,mid)
+    dest.save()
+    return redirect('host_physical_get')
+
+@login_required
+@permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_delete(request,pk):
     object= get_object_or_404(HostPhysical,pk=pk)
     object_data = object.__dict__.copy()
