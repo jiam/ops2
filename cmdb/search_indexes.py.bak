@@ -7,7 +7,7 @@ class hostvirtualIndex(indexes.SearchIndex,indexes.Indexable):
     manage_ip = indexes.CharField(model_attr='Manage_IP')
     vip = indexes.CharField(model_attr='VIP',null=True)
     nas_ip = indexes.CharField(model_attr='NAS_IP',null=True)
-    physical_host_ip = indexes.CharField(model_attr='Physical_Host_IP',null=True)
+    physical_host_ip = indexes.CharField(model_attr='Physical_Host_IP')
     user = indexes.CharField(model_attr='User',null=True)
     useinfo = indexes.CharField(model_attr='Use_Info',null=True)
     service_name = indexes.CharField()
