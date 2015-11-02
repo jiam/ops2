@@ -1,0 +1,378 @@
+{% extends 'base.html'  %}
+{% block index %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">物理主机</h3> 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsebaseinfo">基本信息</a>
+            </h4>
+        </div>
+        <div id="collapsebaseinfo" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.HostName.id_for_label }}">主机名:</label>
+                    {{ form.HostName }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.Status.id_for_label }}">状态:</label>
+                    {{ form.Status }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.department.id_for_label }}">部门:</label>
+                    {{ form.department }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.service.id_for_label }}">业务:</label>
+                    {{ form.service }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.UseInfo.id_for_label }}">用途:</label>
+                    {{ form.UseInfo }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.User.id_for_label }}">用户:</label>
+                    {{ form.User }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Manage_IP.id_for_label }}">管理IP:</label>
+                    {{ form.Manage_IP }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+                </form>
+            </div>
+            </div>
+         </div>
+     </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsesysinfo">系统信息</a>
+            </h4>
+        </div>
+        <div id="collapsesysinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.os.id_for_label }}">系统:</label>
+                    {{ form.os }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.kerenl.id_for_label }}">内核:</label>
+                    {{ form.kernel }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.Memory_Size.id_for_label }}">内存大小:</label>
+                    {{ form.Memory_Size }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.Disk_Size.id_for_label }}">硬盘大小:</label>
+                    {{ form.Disk_Size }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.RAID_Level.id_for_label }}">RAID级别:</label>
+                    {{ form.RAID_Level }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.RAC_IP.id_for_label }}">远程管理IP:</label>
+                    {{ form.RAC_IP }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.VIP.id_for_label }}">VIP:</label>
+                    {{ form.VIP }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.NAS_IP.id_for_label }}">NAS IP:</label>
+                    {{ form.NAS_IP }}
+                 </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseidcinfo">机房信息</a>
+            </h4>
+        </div>
+        <div id="collapseidcinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.idc.id_for_label }}">机房:</label>
+                    {{ form.idc }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.zone.id_for_label }}">区域:</label>
+                    {{ form.zone }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.rack.id_for_label }}">机柜:</label>
+                    {{ form.rack }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Rack_Position.id_for_label }}">U位:</label>
+                    {{ form.Rack_Position }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsehwinfo">硬件信息</a>
+            </h4>
+        </div>
+        <div id="collapsehwinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.Asset_SN.id_for_label }}">资产编号:</label>
+                    {{ form.Asset_SN }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.vendor.id_for_label }}">厂商:</label>
+                    {{ form.vendor }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.model.id_for_label }}">型号:</label>
+                    {{ form.model }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.SN.id_for_label }}">序列号:</label>
+                    {{ form.SN }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.cpu.id_for_label }}">CPU:</label>
+                    {{ form.cpu}}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.CPU_Number.id_for_label }}">CPU个数:</label>
+                    {{ form.CPU_Number }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.memory.id_for_label }}">内存:</label>
+                    {{ form.memory }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Memory_Number.id_for_label }}">内存条数:</label>
+                    {{ form.Memory_Number }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.disk.id_for_label }}">硬盘:</label>
+                    {{ form.disk}}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Disk_Number.id_for_label }}">硬盘个数:</label>
+                    {{ form.Disk_Number }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.raid.id_for_label }}">RAID:</label>
+                    {{ form.raid}}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.RAID_Battery.id_for_label }}">RAID电池:</label>
+                    {{ form.RAID_Battery }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.hba.id_for_label }}">HBA卡:</label>
+                    {{ form.hba }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.HBA_Number.id_for_label }}">HBA卡个数:</label>
+                    {{ form.HBA_Number}}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.pcie.id_for_label }}">PCIE卡:</label>
+                    {{ form.pcie }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.PCIE_Number.id_for_label }}">PCIE卡个数:</label>
+                    {{ form.PCIE_Number }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.nic.id_for_label }}">外置网卡:</label>
+                    {{ form.nic }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.NIC_Number.id_for_label }}">外置网卡个数:</label>
+                    {{ form.NIC_Number }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseassetinfo">资产信息</a>
+            </h4>
+        </div>
+        <div id="collapseassetinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.Purchasing_Time.id_for_label }}">购买日期:</label>
+                    {{ form.Purchasing_Time }}
+                </div>
+                    <script>
+                    $('#id_Purchasing_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Guarantee_Time.id_for_label }}">过保日期:</label>
+                    {{ form.Guarantee_Time }}
+                </div>
+                    <script>
+                    $('#id_Guarantee_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Up_Time.id_for_label }}">上架日期:</label>
+                    {{ form.Up_Time }}
+                </div>
+                    <script>
+                    $('#id_Up_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
+                    {{ form.Change_Time }}
+                </div>
+                    <script>
+                    $('#id_Change_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label class="control-label"  for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
+                        {{ form.Change_Info }}
+                </div>
+                <div class = "form-group">
+                    <label class="control-label" for="{{ form.Remarks.id_for_label }}">备注:</label>
+                    {{ form.Remarks }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+    
+     <script>
+     {% if form.instance.vendor.id %}
+     $("#id_vendor").get(0).selectedIndex={{ form.instance.vendor.id }};
+     {% endif %}
+     {# ajax  get model #} 
+
+     function get_model(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/object/model/ajax/get",
+              data: "id_vendor=" + $('#id_vendor').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_model').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_model').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+     function get_zone(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/resource/zone/ajax/get",
+              data: "id_idc=" + $('#id_idc').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_zone').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_zone').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+    function get_rack(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/resource/rack/ajax/get",
+              data: "id_idc=" + $('#id_idc').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_rack').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_rack').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+
+         $("#id_vendor").change(function(){           
+            get_model();  // AJAX function call when vendor is selected             
+         });
+         $("#id_idc").change(function(){           
+            get_zone();  // AJAX function call when idc is selected             
+            get_rack();  // AJAX function call when idc is selected             
+         });
+     </script>
+</div>
+{% endblock %}

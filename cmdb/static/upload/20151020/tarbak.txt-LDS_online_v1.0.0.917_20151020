@@ -1,0 +1,157 @@
+/home/jenkins/jobs/AMS2_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ams2/webapps && tar -zcvf AMS220140710-183905.tar.gz AMS2 --exclude AMS2/WEB-INF/attachments
+/home/jenkins/jobs/AMS_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ams/webapps && tar -zcvf AMS20140304-181615.tar.gz AMS --exclude AMS/WEB-INF/attachments
+/home/jenkins/jobs/AM-tsm_engine_Online/lastStable/log ------: [sshexec] cmd : cd /app/tradematch3.0/tomcat-tsm_engine/webapps && tar -zcvf tsmEngine20150828-170126.tar.gz tsmEngine
+/home/jenkins/jobs/annuity-aqbbatch_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-zqbbatch/webapps && tar -zcvf zqbbatch20140319-150854.tar.gz zqbbatch
+/home/jenkins/jobs/annuity-aqbgateway_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-zqbgateway/webapps && tar -zcvf zqbgateway20140319-151031.tar.gz zqbgateway
+/home/jenkins/jobs/annuity-aqbmanager_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-zqbmanager/webapps && tar -zcvf zqbmanager20140319-150614.tar.gz zqbmanager
+/home/jenkins/jobs/ApamaManagement_trust_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-apama/webapps && tar -zcvf apamaMangement20150625-182331.tar.gz apamaMangement
+/home/jenkins/jobs/ApamaManagement_tsm_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-exchange/webapps && tar -zcvf apamaMangement20150825-185422.tar.gz apamaMangement
+/home/jenkins/jobs/ApamaManagement_tsm_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-exchange/webapps && tar -zcvf apamaMangement20140904-143714.tar.gz apamaMangement
+/home/jenkins/jobs/ApamaMangement_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-apama/webapps && tar -zcvf apamaMangement20140925-191746.tar.gz apamaMangement
+/home/jenkins/jobs/ApamaMangement_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-apama/webapps && tar -zcvf apamaMangement20140814-190743.tar.gz apamaMangement
+/home/jenkins/jobs/AutoLoan_cluster_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-AutoLoan/webapps && tar -zcvf AutoLoan20150825-211927.tar.gz AutoLoan --exclude AutoLoan/UPLOADIMAGE --exclude AutoLoan/download/*
+/home/jenkins/jobs/AutoLoanPad_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-AutoLoan_pad/webapps && tar -zcvf AutoLoan_pad20150317-230731.tar.gz AutoLoan_pad
+/home/jenkins/jobs/AutoLoan_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-AutoLoan/webapps && tar -zcvf AutoLoan20140610-214415.tar.gz AutoLoan --exclude AutoLoan/UPLOADIMAGE --exclude AutoLoan/download/*
+/home/jenkins/jobs/AutoLoan_WeiXin_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-wxautoloan/webapps && tar -zcvf YcdWeiXin20140626-211933.tar.gz YcdWeiXin --exclude YcdWeiXin/UPLOADIMAGE --exclude YcdWeiXin/download/*
+/home/jenkins/jobs/Borrow_Online/lastStable/log ------:
+/home/jenkins/jobs/Borrow_Release/lastStable/log ------:
+/home/jenkins/jobs/BorrowSale_Online/lastStable/log ------:
+/home/jenkins/jobs/BorrowSale_Release/lastStable/log ------:
+/home/jenkins/jobs/BorrowServer_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-borrowsale/webapps && tar -zcvf sellManager20150811-200026.tar.gz sellManager --exclude sellManager/table
+/home/jenkins/jobs/BorrowServer_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-borrowsale/webapps && tar -zcvf sellManager20141030-220859.tar.gz sellManager --exclude sellManager/table
+/home/jenkins/jobs/bsparter_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-bcc/webapps && tar -zcvf bcc20150721-204647.tar.gz bcc
+/home/jenkins/jobs/BS_PCAPPLY_7070 and 8080_Release/lastStable/log ------:
+/home/jenkins/jobs/BS_PCApply_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-sellTerminal8080/webapps && tar -zcvf sellTerminal20150115-204135.tar.gz sellTerminal
+/home/jenkins/jobs/BS_PHONE_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-phone/webapps && tar -zcvf phone20140911-202556.tar.gz phone
+/home/jenkins/jobs/bsrouter_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-bsrou/webapps && tar -zcvf bsrou20150804-200812.tar.gz bsrou
+/home/jenkins/jobs/CCSP_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ccsp/webapps && tar -zcvf ccsp20150519-200035.tar.gz ccsp
+/home/jenkins/jobs/CCSP_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ccsp/webapps && tar -zcvf ccsp20140911-194328.tar.gz ccsp
+/home/jenkins/jobs/CFposm_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-cfposm/webapps && tar -zcvf CFposm20150827-191528.tar.gz CFposm
+/home/jenkins/jobs/clic2Web_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-clic/webapps && tar -zcvf clic20150827-200032.tar.gz clic --exclude clic/quartzReport clic/downloadBag
+/home/jenkins/jobs/clic2Web_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-clic/webapps && tar -zcvf clic20141011-183513.tar.gz clic --exclude clic/quartzReport clic/downloadBag
+/home/jenkins/jobs/clic_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-clic/webapps && tar -zcvf clic20150827-200650.tar.gz clic --exclude clic/quartzReport clic/downloadBag
+/home/jenkins/jobs/clic_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-clic/webapps && tar -zcvf clic20141011-183008.tar.gz clic --exclude clic/quartzReport clic/downloadBag
+/home/jenkins/jobs/cmfClient_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20140814-184621.tar.gz CreditCMClient
+/home/jenkins/jobs/cmf_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20140814-184533.tar.gz CreditCM
+/home/jenkins/jobs/cmft_Release/lastStable/log ------: [sshexec] cmd : cd /opt/creditcm && tar -zcvf CreditTransFlex20140703-190319.tar.gz CreditTransFlex
+/home/jenkins/jobs/CreditBX_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditBX/webapps && tar -zcvf CreditBX20140710-192543.tar.gz CreditBX
+/home/jenkins/jobs/CreditCC2.0_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-callcenter2.0/webapps && tar -zcvf CreditCC2.020150818-222327.tar.gz CreditCC2.0
+/home/jenkins/jobs/CreditCC2.0_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-callcenter2.0/webapps && tar -zcvf CreditCC2.020141106-212743.tar.gz CreditCC2.0
+/home/jenkins/jobs/CreditCC_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-callcenter/webapps && tar -zcvf CreditCC20150310-183354.tar.gz CreditCC --exclude CreditCC/logs
+/home/jenkins/jobs/CreditCM4_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditCM4/webapps && tar -zcvf CreditCM420141009-194043.tar.gz CreditCM4
+/home/jenkins/jobs/CreditCMcd_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20150312-203018.tar.gz CreditCM
+/home/jenkins/jobs/CreditCMClient4_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditCM4/webapps && tar -zcvf CreditCMClient420141009-194159.tar.gz CreditCMClient4
+/home/jenkins/jobs/CreditCMClientcd_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20150312-213503.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClientcmc_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20141106-162519.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClientcmc_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20141028-204813.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClientcmd_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20141106-195550.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClientcmd_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20140701-191317.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClient-OCR_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20141111-201507.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClient_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20150820-203112.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMClient_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCMClient20141023-204448.tar.gz CreditCMClient
+/home/jenkins/jobs/CreditCMCloud_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditCM4/webapps && tar -zcvf CreditCMCloud20150813-191653.tar.gz CreditCMCloud
+/home/jenkins/jobs/CreditCMcmc_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20141106-123449.tar.gz CreditCM
+/home/jenkins/jobs/CreditCMcmc_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20141028-204434.tar.gz CreditCM
+/home/jenkins/jobs/CreditCMcmd_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20141106-195655.tar.gz CreditCM
+/home/jenkins/jobs/CreditCMcmd_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20140701-191105.tar.gz CreditCM
+/home/jenkins/jobs/CreditCM-OCR_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20141111-192725.tar.gz CreditCM
+/home/jenkins/jobs/CreditCM_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20150820-202946.tar.gz CreditCM
+/home/jenkins/jobs/CreditCM_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf CreditCM20141023-204344.tar.gz CreditCM
+/home/jenkins/jobs/CreditEaseCommon_Release/lastStable/log ------: [sshexec] cmd : cd /app/exchange && tar -zcvf CrediteaseCommon20140904-182023.tar.gz CrediteaseCommon
+/home/jenkins/jobs/CreditEaseCommon_trust_Online/lastStable/log ------: [sshexec] cmd : cd /app/apama && tar -zcvf CreditEaseCommon20141013-182605.tar.gz CreditEaseCommon
+/home/jenkins/jobs/CreditEaseCommon_tsm_Online/lastStable/log ------: [sshexec] cmd : cd /app/exchange && tar -zcvf CreditEaseCommon20150512-185954.tar.gz CreditEaseCommon
+/home/jenkins/jobs/CreditEMS_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditems/webapps && tar -zcvf CreditEMS20150827-184755.tar.gz CreditEMS
+/home/jenkins/jobs/CreditForm_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ccform/webapps && tar -zcvf CreditForm20150818-222754.tar.gz CreditForm --exclude CreditForm/logs
+/home/jenkins/jobs/CreditSRM_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditSRM/webapps && tar -zcvf CreditSRM20140424-153030.tar.gz CreditSRM
+/home/jenkins/jobs/CreditVAS_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-CreditVAS/webapps && tar -zcvf CreditVAS20140507-141933.tar.gz CreditVAS
+/home/jenkins/jobs/crm_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-crm/webapps && tar -zcvf crm20150827-194006.tar.gz crm --exclude crm/UPLOAD --exclude crm/image
+/home/jenkins/jobs/crm_Release/lastStable/log ------:
+/home/jenkins/jobs/crmws_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-crm/webapps && tar -zcvf crm20150827-193542.tar.gz crm
+/home/jenkins/jobs/crmWS_release/lastStable/log ------:
+/home/jenkins/jobs/CTI_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-bxt/webapps && tar -zcvf CTI20150122-185753.tar.gz CTI
+/home/jenkins/jobs/CTM_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ctm/webapps && tar -zcvf CTM20150324-183810.tar.gz CTM
+/home/jenkins/jobs/CTweb_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-bxt/webapps && tar -zcvf CTweb20150324-183553.tar.gz CTweb
+/home/jenkins/jobs/cuishou_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-cuishou/webapps && tar -zcvf greyhound20150729-000244.tar.gz greyhound
+/home/jenkins/jobs/DealerAS_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-DealerAS/webapps && tar -zcvf DealerAS20150703-171009.tar.gz DealerAS
+/home/jenkins/jobs/dis_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ipdis/webapps && tar -zcvf dis20150625-182033.tar.gz dis
+/home/jenkins/jobs/DMS_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dms/webapps && tar -zcvf dms20150811-180106.tar.gz dms
+/home/jenkins/jobs/DMS_Release/lastStable/log ------:
+/home/jenkins/jobs/dss_n_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dss_n/webapps && tar -zcvf dss_n20150609-105055.tar.gz dss_n
+/home/jenkins/jobs/dss_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dss/webapps && tar -zcvf dss20150604-183932.tar.gz dss
+/home/jenkins/jobs/dss_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dss/webapps && tar -zcvf dss20140902-182744.tar.gz dss
+/home/jenkins/jobs/dsstts_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-shdianqian/webapps && tar -zcvf dss_tts20141105-133615.tar.gz dss_tts
+/home/jenkins/jobs/dsstts_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-shdianqian/webapps && tar -zcvf dss_tts20140708-183057.tar.gz dss_tts
+/home/jenkins/jobs/EASExt_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-eas/webapps && tar -zcvf EASExt20140812-184152.tar.gz EASExt
+/home/jenkins/jobs/EASExts_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-eas/webapps && tar -zcvf EASExt20150827-183457.tar.gz EASExt
+/home/jenkins/jobs/FFA_Manager_OnLine/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ffaManager/webapps && tar -zcvf ffaManager20150825-155726.tar.gz ffaManager
+/home/jenkins/jobs/FFA_OnLine/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-FFA/webapps && tar -zcvf FFA20150825-160248.tar.gz FFA
+/home/jenkins/jobs/fileBrowser_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-creditcm/webapps && tar -zcvf FileBrowser20140731-220331.tar.gz FileBrowser
+/home/jenkins/jobs/finance_das_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dealeras/webapps && tar -zcvf dealerAS20150702-183745.tar.gz dealerAS
+/home/jenkins/jobs/finance_das_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-dealeras/webapps && tar -zcvf dealerAS20141030-200301.tar.gz dealerAS
+/home/jenkins/jobs/finance_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lease/webapps && tar -zcvf finance20150728-182948.tar.gz finance
+/home/jenkins/jobs/finance_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lease/webapps && tar -zcvf finance20141104-183947.tar.gz finance
+/home/jenkins/jobs/financial_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-Financial/webapps && tar -zcvf financial20150813-183910.tar.gz financial
+/home/jenkins/jobs/hnexchange_maven_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-hnexchange/webapps && tar -zcvf hnexchange20150827-183124.tar.gz HNSETS
+/home/jenkins/jobs/hound_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-hound/webapps && tar -zcvf hound20150203-155711.tar.gz hound --exclude hound/UPLOAD --exclude hound/image
+/home/jenkins/jobs/ICPlatform_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-icp/webapps && tar -zcvf ICPlatform20131226-204341.tar.gz ICPlatform
+/home/jenkins/jobs/icrm_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-icrm/webapps && tar -zcvf icrm20150409-194942.tar.gz icrm
+/home/jenkins/jobs/ID5_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-id5/webapps && tar -zcvf id520141021-185527.tar.gz id5
+/home/jenkins/jobs/ID5_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-id5/webapps && tar -zcvf id520140306-173819.tar.gz id5
+/home/jenkins/jobs/isign_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-isign/webapps && tar -zcvf isign20150521-183254.tar.gz isign
+/home/jenkins/jobs/jspocm_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-jspocm/webapps && tar -zcvf percal20150820-182111.tar.gz percal
+/home/jenkins/jobs/kaoqin_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-kaoqin/webapps && tar -zcvf kaoqin20150723-190008.tar.gz kaoqin
+/home/jenkins/jobs/lenderSale_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lendersale/webapps && tar -zcvf lenderSale20150827-194240.tar.gz lenderSale --exclude lenderSale/exportContract --exclude lenderSale/exportFile --exclude lenderSale/file --exclude lenderSale/image
+/home/jenkins/jobs/lenderSale_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lendersale/webapps && tar -zcvf lenderSale20141014-182839.tar.gz lenderSale --exclude lenderSale/exportContract --exclude lenderSale/exportFile --exclude lenderSale/file --exclude lenderSale/image
+/home/jenkins/jobs/LingTou_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lingtou/webapps && tar -zcvf lingtou20150309-193541.tar.gz ROOT
+/home/jenkins/jobs/lsreportsmp_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-lsreportsmp/webapps && tar -zcvf lsreportsmp20150827-191316.tar.gz lsreportsmp --exclude lsreportsmp/exportContract --exclude lsreportsmp/exportFile --exclude lsreportsmp/file --exclude lsreportsmp/image
+/home/jenkins/jobs/MFC_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-mfc/webapps && tar -zcvf MFC20150820-184320.tar.gz MFC
+/home/jenkins/jobs/MFC_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-mfc/webapps && tar -zcvf MFC20141127-195553.tar.gz MFC
+/home/jenkins/jobs/MFCWX_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-mfcwx/webapps && tar -zcvf MFCWX20150130-141219.tar.gz MFCWX
+/home/jenkins/jobs/MFCWX_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-mfcwx/webapps && tar -zcvf MFCWX20140624-185458.tar.gz MFCWX
+/home/jenkins/jobs/MIC_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ammis/webapps && tar -zcvf collection20150825-192219.tar.gz collection
+/home/jenkins/jobs/MisOA_Release/lastStable/log ------:
+/home/jenkins/jobs/mis_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-eas/webapps && tar -zcvf mis20150827-183323.tar.gz mis
+/home/jenkins/jobs/mpc_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-mpc/webapps && tar -zcvf mpc20150702-183113.tar.gz mpc
+/home/jenkins/jobs/NCM_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-nagios-monitor/webapps && tar -zcvf ncm20150611-190038.tar.gz ncm
+/home/jenkins/jobs/nplm_Online/lastStable/log ------: [sshexec] cmd : cd /app/weblogic/user_projects/domains/base_domain/ && tar -zcvf nplm20150827-195555.tar.gz nplm
+/home/jenkins/jobs/nsmp_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-smp_corp/webapps && tar -zcvf casServer20150720-101617.tar.gz casServer
+/home/jenkins/jobs/nwmss_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-product/webapps && tar -zcvf nwmss20150820-185005.tar.gz nwmss
+/home/jenkins/jobs/oics_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-oics/webapps && tar -zcvf oics20150821-190203.tar.gz oics
+/home/jenkins/jobs/onboard_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-onboard/webapps && tar -zcvf onboard20150811-181955.tar.gz onboard
+/home/jenkins/jobs/orgams_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-orgams/webapps && tar -zcvf orgams20141010-142449.tar.gz orgams
+/home/jenkins/jobs/p2p_batch_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-newlender/webapps && tar -zcvf p2p_batch20150521-190506.tar.gz p2p_batch
+/home/jenkins/jobs/p2pf_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-p2pfront/webapps && tar -zcvf p2pf20150813-191754.tar.gz p2pf
+/home/jenkins/jobs/payPlatform_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-settle/webapps && tar -zcvf payPlatform20141209-191828.tar.gz payPlatform --exclude payPlatform/WEB-INF/attachments
+/home/jenkins/jobs/payPlatform_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-settle/webapps && tar -zcvf payPlatform20141104-213346.tar.gz payPlatform --exclude payPlatform/WEB-INF/attachments
+/home/jenkins/jobs/pdf_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-pdf/webapps && tar -zcvf pdf20150827-190957.tar.gz pdf --exclude pdf/logs --exclude pdf/barImage
+/home/jenkins/jobs/pdf_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-pdf/webapps && tar -zcvf pdf20141204-190941.tar.gz pdf --exclude pdf/logs
+/home/jenkins/jobs/phenix_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-newlender/webapps && tar -zcvf phenix20150826-185211.tar.gz phenix
+/home/jenkins/jobs/phenix_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-newlender/webapps && tar -zcvf phenix20140911-184421.tar.gz phenix
+/home/jenkins/jobs/phenix_test/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-newlender/webapps && tar -zcvf phenixtest20140516-183358.tar.gz phenix
+/home/jenkins/jobs/pocm_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-pocm/webapps && tar -zcvf pocm20150811-182227.tar.gz pocm
+/home/jenkins/jobs/PoSM_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-posm/webapps && tar -zcvf PoSM20150827-190712.tar.gz PoSM
+/home/jenkins/jobs/PoSMsync_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-posm/webapps && tar -zcvf PoSMsync20140630-113234.tar.gz PoSMsync
+/home/jenkins/jobs/PSC_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-psc && tar -zcvf clicService20131008-185502.tar.gz webapps
+/home/jenkins/jobs/pub_Online/lastStable/log ------: [sshexec] cmd : cd /app/weblogic/user_projects/domains/base_domain && tar -zcvf pub20150825-183230.tar.gz pub
+/home/jenkins/jobs/RDM_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-rdm/webapps && tar -zcvf rdm20140225-161121.tar.gz rdm --exclude rdm/WEB-INF/attachments
+/home/jenkins/jobs/RealEstateInter_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-RealEstateInter/webapps && tar -zcvf RealEstateInter20150818-192019.tar.gz RealEstateInter
+/home/jenkins/jobs/RealEstate_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-realestate/webapps && tar -zcvf RealEstate20150825-191649.tar.gz RealEstate --exclude RealEstate/UPLOADIMAGE
+/home/jenkins/jobs/ruleManager_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-nrule/webapps && tar -zcvf nrule-manager20150819-144354.tar.gz nrule-manager
+/home/jenkins/jobs/RuralCredit2_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-rural2/webapps && tar -zcvf RuralCredit220150730-194404.tar.gz RuralCredit2
+/home/jenkins/jobs/RuralCredit2_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-rural2/webapps && tar -zcvf RuralCredit220141120-184909.tar.gz RuralCredit2
+/home/jenkins/jobs/RuralCredit_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ynd20/webapps && tar -zcvf RuralCredit20140626-194028.tar.gz RuralCredit
+/home/jenkins/jobs/ruralwx_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-ruralwx/webapps && tar -zcvf ruralwx20140715-190715.tar.gz ruralwx
+/home/jenkins/jobs/SellOnline_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-bscon/webapps && tar -zcvf sellOnline20140514-010558.tar.gz sellOnline
+/home/jenkins/jobs/sms_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-sms/webapps && tar -zcvf sms20150813-194631.tar.gz sms
+/home/jenkins/jobs/sms_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-sms/webapps && tar -zcvf sms20140911-194214.tar.gz sms
+/home/jenkins/jobs/smsup_Online/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-sms2/webapps && tar -zcvf sms20150813-194827.tar.gz sms
+/home/jenkins/jobs/smsup_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-sms2/webapps && tar -zcvf sms20140911-194146.tar.gz sms
+/home/jenkins/jobs/TCS-TCMS_Online/lastStable/log ------: [sshexec] cmd : cd /app/weblogic/user_projects/domains/base_domain && tar -zcvf tms20150825-194422.tar.gz tms
+/home/jenkins/jobs/TradeMatch_Online/lastStable/log ------: [sshexec] cmd : cd /app/apama && tar -zcvf TradeMatch20140925-184854.tar.gz TradeMatch
+/home/jenkins/jobs/TradeMatch_Release/lastStable/log ------:
+/home/jenkins/jobs/TradeMatch_tsm_Online/lastStable/log ------: [sshexec] cmd : cd /app/exchange && tar -zcvf tradeMatch20150811-183714.tar.gz tradeMatch --exclude tradeMatch/logs
+/home/jenkins/jobs/trustMatch_Online/lastStable/log ------: [sshexec] cmd : cd /app/apama && tar -zcvf trustMatch20150625-182414.tar.gz trustMatch
+/home/jenkins/jobs/tsm_release/lastStable/log ------: [sshexec] cmd : cd /app/exchange && tar -zcvf tsm20140910-151453.tar.gz tradeMatch
+/home/jenkins/jobs/usp_release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-usp/webapps && tar -zcvf usp20150716-182114.tar.gz usp
+/home/jenkins/jobs/VDSS_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-vdss/webapps && tar -zcvf vdss20150210-200211.tar.gz vdss
+/home/jenkins/jobs/VehicleAuction_cluster_Release/lastStable/log ------: [sshexec] cmd : cd /app/tomcat-auction/webapps && tar -zcvf vehicleAuction20141030-191135.tar.gz vehicleAuction

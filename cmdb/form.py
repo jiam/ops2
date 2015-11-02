@@ -455,6 +455,13 @@ class HostPhysicalForm(ModelForm):
     }),
     initial='2015-01-01'
     ,)
+    def __init__(self, *args, **kwargs):
+        super(HostPhysicalForm, self).__init__(*args, **kwargs)
+
+        for key in self.fields:
+            self.fields[key].required = False
+    #def clean_rowname(self):
+        #return self.cleaned_data['rowname'] or None
     class Meta:
         model = HostPhysical
         #fields = ['HostName','Status','Asset_SN','vendor','model','SN']
@@ -578,6 +585,11 @@ class HostVirtualForm(ModelForm):
     }),
     initial='2015-01-01'
     ,)
+    def __init__(self, *args, **kwargs):
+        super(HostVirtualForm, self).__init__(*args, **kwargs)
+
+        for key in self.fields:
+            self.fields[key].required = False
     class Meta:
         model = HostVirtual
         #fields = ['HostName','Status','Asset_SN','vendor','model','SN']

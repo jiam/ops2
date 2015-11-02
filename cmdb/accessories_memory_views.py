@@ -11,17 +11,8 @@ import cmdb_log
 @login_required
 def memory_get(request):
     if request.method == 'GET':
-        objects_list = Accessories_Memory.objects.all()
-        num = objects_list.count()
-        paginator = Paginator(objects_list,15)
-        page = request.GET.get('page')
-        try:
-            objects = paginator.page(page)
-        except PageNotAnInteger:
-            objects = paginator.page(1)
-        except EmptyPage:
-            objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        objects = Accessories_Memory.objects.all()
+        context = {'objects':objects}
         return render(request,'accessories_memory_list.html',context)
 
 @login_required

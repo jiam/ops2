@@ -12,17 +12,8 @@ from excellib import create_application_excel
 @login_required
 def application_get(request):
     if request.method == 'GET':
-        objects_list = Application.objects.all()
-        num = objects_list.count()
-        paginator = Paginator(objects_list,15)
-        page = request.GET.get('page')
-        try:
-            objects = paginator.page(page)
-        except PageNotAnInteger:
-            objects = paginator.page(1)
-        except EmptyPage:
-            objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        objects = Application.objects.all()
+        context = {'objects':objects}
         return render(request,'application_list.html',context)
 
 @login_required

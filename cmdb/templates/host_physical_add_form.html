@@ -1,0 +1,147 @@
+{% extends 'base.html'  %}
+{% block index %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">物理主机</h3> 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                基本信息
+            </h4>
+        </div>
+        <div class="panel-body">
+           <div class = "col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.SN.id_for_label }}">序列号:</label>
+                    {{ form.SN }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.Asset_SN.id_for_label }}">资产编号:</label>
+                    {{ form.Asset_SN }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.HostName.id_for_label }}">主机名:</label>
+                    {{ form.HostName }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.Status.id_for_label }}">状态:</label>
+                    {{ form.Status }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.department.id_for_label }}">部门:</label>
+                    {{ form.department }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.service.id_for_label }}">业务:</label>
+                    {{ form.service }}
+                 </div>
+                <div class = "form-group">
+                    <label for="{{ form.UseInfo.id_for_label }}">用途:</label>
+                    {{ form.UseInfo }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.User.id_for_label }}">用户:</label>
+                    {{ form.User }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Manage_IP.id_for_label }}">管理IP:</label>
+                    {{ form.Manage_IP }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+           </form>
+           </div>
+     <script>
+     {% if form.instance.vendor.id %}
+     $("#id_vendor").get(0).selectedIndex={{ form.instance.vendor.id }};
+     {% endif %}
+     {# ajax  get model #} 
+
+     function get_model(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/object/model/ajax/get",
+              data: "id_vendor=" + $('#id_vendor').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_model').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_model').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+     function get_zone(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/resource/zone/ajax/get",
+              data: "id_idc=" + $('#id_idc').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_zone').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_zone').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+    function get_rack(){
+            jQuery.ajax({
+              async: false,
+              type: "POST",
+              url: "/cmdb/resource/rack/ajax/get",
+              data: "id_idc=" + $('#id_idc').val(),
+              success: function(response) {
+                    result = JSON.parse(response);
+                    if (result) {
+                        $('#id_rack').empty()  // Use to empty the select
+
+                        // Now we append the sector options we've received
+                        for(var i=0;i < result.item_list.length;i++){
+                            $('#id_rack').append($('<option>', { 
+                                value: result.item_list[i]['id'],
+                                text: result.item_list[i]['name'] 
+                        }));                                                   
+                        }
+
+                    } else {
+                        console.log('error');
+                    }
+                }
+            });
+        }
+
+         $("#id_vendor").change(function(){           
+            get_model();  // AJAX function call when vendor is selected             
+         });
+         $("#id_idc").change(function(){           
+            get_zone();  // AJAX function call when idc is selected             
+            get_rack();  // AJAX function call when idc is selected             
+         });
+     </script>
+     </div>
+  </div>
+</div>
+{% endblock %}

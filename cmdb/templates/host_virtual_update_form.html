@@ -1,0 +1,165 @@
+{% extends 'base.html'  %}
+{% block index %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <h3 class="page-header">虚拟主机</h3> 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsebaseinfo">基本信息</a>
+            </h4>
+        </div>
+        <div id="collapsebaseinfo" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form  method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label  for="{{ form.HostName.id_for_label }}">主机名:</label>
+                        {{ form.HostName }}
+                    </div>
+                <div class = "form-group">
+                    <label for="{{ form.Status.id_for_label }}">状态:</label>
+                        {{ form.Status }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.department.id_for_label }}">部门:</label>
+                    {{ form.department }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.service.id_for_label }}">业务:</label>
+                    {{ form.service }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.UseInfo.id_for_label }}">用途:</label>
+                    {{ form.Use_Info }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.User.id_for_label }}">用户:</label>
+                    {{ form.User }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Manage_IP.id_for_label }}">管理IP:</label>
+                    {{ form.Manage_IP }}
+                </div>
+                     <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+                </form>
+            </div>
+            </div>
+         </div>
+     </div>
+     <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsesysinfo">系统信息</a>
+            </h4>
+        </div>
+        <div id="collapsesysinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.os.id_for_label }}">操作系统:</label>
+                    {{ form.os }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.kerenl.id_for_label }}">内核版本:</label>
+                    {{ form.kernel }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.vCPU_Number.id_for_label }}">CPU个数:</label>
+                    {{ form.vCPU_Number }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Memory_Size.id_for_label }}">内存大小:</label>
+                    {{ form.Memory_Size }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Disk_Size.id_for_label }}">硬盘大小:</label>
+                    {{ form.Disk_Size }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.VIP.id_for_label }}">VIP:</label>
+                    {{ form.VIP }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.NAS_IP.id_for_label }}">NAS IP:</label>
+                    {{ form.NAS_IP }}
+                </div>
+                <div class = "form-group">
+                    <label for="{{ form.Physical_Host_IP.id_for_label }}">宿主机IP:</label>
+                    {{ form.Physical_Host_IP }}
+                </div>
+                    <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseassetinfo">资产信息</a>
+            </h4>
+        </div>
+        <div id="collapseassetinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+            <form method="post">{% csrf_token %}
+                <div class = "form-group">
+                    <label for="{{ form.Application_Time.id_for_label }}">申请日期:</label>
+                    {{ form.Application_Time }}
+                </div>
+                     <script>
+                    $('#id_Application_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Up_Time.id_for_label }}">开通日期:</label>
+                    {{ form.Up_Time }}
+                </div>
+                     <script>
+                    $('#id_Up_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Use_Period.id_for_label }}">截止日期:</label>
+                    {{ form.Use_Period }}
+                </div>
+                     <script>
+                    $('#id_Use_Period').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label for="{{ form.Change_Time.id_for_label }}">变更日期:</label>
+                    {{ form.Change_Time }}
+                </div>
+                     <script>
+                    $('#id_Change_Time').datepicker({
+                       format: "yyyy-mm-dd",
+                       language: "zh-CN"
+                    });
+                    </script>
+                <div class = "form-group">
+                    <label class="control-label"  for="{{ form.Change_Info.id_for_label }}">变更说明:</label>
+                        {{ form.Change_Info }}
+                </div>
+                <div class = "form-group">
+                    <label class="control-label" for="{{ form.Remarks.id_for_label }}">备注:</label>
+                    {{ form.Remarks }}
+                </div>
+                    <button type='submit' class='btn btn-primary'>保存</button>
+                     <a class = 'btn' href  = '/cmdb/host/physical/get'>取消</a>
+             </form>
+             </div>
+             </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

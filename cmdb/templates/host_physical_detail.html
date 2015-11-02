@@ -2,312 +2,176 @@
 {% block host_physical %}
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
     <h3 class="page-header">物理主机详情</h3> 
-    <div>
-                    {# 基本信息 #}
-            <div class = "row">
-                <div class = "col-lg-1">
-                    <label for="{{ object.HostName.id_for_label }}">主机名:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.HostName }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.Status.id_for_label }}">状态:</label>
-                </div>
-                <div class = "col-lg-1">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsebaseinfo">基本信息</a>
+            </h4>
+        </div>
+        <div id="collapsebaseinfo" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <dl class="dl-horizontal">
+                    <dt>主机名:</dt>
+                    <dd>{{ object.HostName }}</dd>
+                    <dt>状态:</dt>
                     {# object.Status #}
                     {% if object.Status == 0 %}
-                    使用
+                    <dd>使用</dd>
                     {% elif object.Status == 1 %}
-                    空闲
+                    <dd>空闲</dd>
                     {% elif object.Status == 2 %}
-                    故障
+                    <dd>故障</dd>
                     {% else %}
-                    备用
+                    <dd>备用</dd>
                     {% endif %}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.department.id_for_label }}">部门:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.department }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.service.id_for_label }}">业务:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.service }}
-                </div>
+                    <dt>部门:</dt>
+                    <dd>{{ object.department }}</dd>
+                    <dt>业务:</dt>
+                    <dd>{{ object.service }}</dd>
+                    <dt>用途:</dt>
+                    <dd>{{ object.UseInfo }}</dd>
+                    <dt>用户:</dt>
+                    <dd>{{ object.User }}</dd>
+                    <dt>管理IP:</dt>
+                    <dd>{{ object.Manage_IP }}</dd>
+                </dl>
             </div>
-            <div class = "row">
-                <div class = "col-lg-1">
-                    <label for="{{ object.UseInfo.id_for_label }}">用途:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.UseInfo }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.User.id_for_label }}">用户:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.User }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.Manage_IP.id_for_label }}">管理IP:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Manage_IP }}
-                </div>
-            </div>
-            <hr>
-                    {# 系统信息 #}
-            <div class='row'>
-                <div class = "col-lg-1">
-                    <label for="{{ object.os.id_for_label }}">系统:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.os }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.kerenl.id_for_label }}">内核:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.kernel }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Memory_Size.id_for_label }}">内存大小:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Memory_Size }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Disk_Size.id_for_label }}">硬盘大小:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Disk_Size }}
-                </div>
-            </div>
-            <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.RAID_Level.id_for_label }}">RAID级别:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.RAID_Level }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.RAC_IP.id_for_label }}">远程管理IP:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.RAC_IP }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.VIP.id_for_label }}">VIP:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.VIP }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.NAS_IP.id_for_label }}">NAS IP:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.NAS_IP }}
-                </div>
-             </div>
-            <hr>
-                    {# 机房信息 #}
-            <div class='row'>
-                <div class = "col-lg-1">
-                    <label for="{{ object.idc.id_for_label }}">机房:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.idc }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.zone.id_for_label }}">区域:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.zone }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.rack.id_for_label }}">机柜:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.rack }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.Rack_Position.id_for_label }}">U位:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Rack_Position }}
-                </div>
-            </div>
-            <hr>
-                    {# 硬件信息 #}
-            <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Asset_SN.id_for_label }}">资产编号:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Asset_SN }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.vendor.id_for_label }}">厂商:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.vendor }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.model.id_for_label }}">型号:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.model }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.SN.id_for_label }}">序列号:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.SN }}
-                </div>
-           </div>
-           <div class='row'>
-                <div class = "col-lg-1">
-                    <label for="{{ object.cpu.id_for_label }}">CPU:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.cpu}}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.CPU_Number.id_for_label }}">CPU个数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.CPU_Number }}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.memory.id_for_label }}">内存:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.memory }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Memory_Number.id_for_label }}">内存条数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Memory_Number }}
-                </div>
-            </div>
-            <div class='row'>
-                <div class = "col-lg-1">
-                    <label for="{{ object.disk.id_for_label }}">硬盘:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.disk}}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Disk_Number.id_for_label }}">硬盘个数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.Disk_Number }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.raid.id_for_label }}">RAID:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.raid}}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.RAID_Battery.id_for_label }}">RAID电池:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.RAID_Battery }}
-                </div>
-            </div>
-            <div class='row'>
-                <div class = "col-lg-1">
-                    <label for="{{ object.hba.id_for_label }}">HBA卡:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.hba }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.HBA_Number.id_for_label }}">HBA卡个数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.HBA_Number}}
-                </div>
-                <div class = "col-lg-1">
-                    <label for="{{ object.pcie.id_for_label }}">PCIE卡:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.pcie }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.PCIE_Number.id_for_label }}">PCIE卡个数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.PCIE_Number }}
-                </div>
-            </div>
-            <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.nic.id_for_label }}">外置网卡:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.nic }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.NIC_Number.id_for_label }}">外置网卡个数:</label>
-                </div>
-                <div class = "col-lg-1">
-                    {{ object.NIC_Number }}
-                </div>
-             </div>
-            <hr>
-                    {# 其他信息 #}
-            <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Purchasing_Time.id_for_label }}">购买日期:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.Purchasing_Time | date:"Y-m-d" }}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Guarantee_Time.id_for_label }}">过保日期:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.Guarantee_Time | date:"Y-m-d" }}
-                </div>
-             </div>
-             <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Up_Time.id_for_label }}">上架日期:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.Up_Time | date:"Y-m-d"}}
-                </div>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Change_Time.id_for_label }}">变更日期:</label>
-                </div>
-                <div class = "col-lg-2">
-                    {{ object.Change_Time | date:"Y-m-d"}}
-                </div>
-             </div>
-             <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Change_Info.id_for_label }}">变更说明:</label>
-                </div>
-                <div class = "col-lg-7">
-                    {{ object.Change_Info }}
-                </div>
-             </div>
-             <div class='row'>
-                <div class = "col-lg-2">
-                    <label for="{{ object.Remarks.id_for_label }}">备注:</label>
-                </div>
-                <div class = "col-lg-7">
-                    {{ object.Remarks }}
-                </div>
-            </div>
-    
+          </div>
+       </div>
      </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsesysinfo">系统信息</a>
+            </h4>
+        </div>
+        <div id="collapsesysinfo" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <dl class="dl-horizontal">
+                    <dt >系统:</dt>
+                    <dd>{{ object.os }}</dd>
+                    <dt >内核:</dt>
+                    <dd>{{ object.kernel }}</dd>
+                    <dt >内存大小:</dt>
+                    <dd>{{ object.Memory_Size }}</dd>
+                    <dt >硬盘大小:</dt>
+                    <dd>{{ object.Disk_Size }}</dd>
+                    <dt >RAID级别:</dt>
+                    <dd>{{ object.RAID_Level }}</dd>
+                    <dt >远程管理IP:</dt>
+                    <dd>{{ object.RAC_IP }}</dd>
+                    <dt >VIP:</dt>
+                    <dd>{{ object.VIP }}</dd>
+                    <dt >NAS IP:</dt>
+                    <dd>{{ object.NAS_IP }}</dd>
+                </dl>
+             </div>
+           </div>
+        </div>
+      </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseidcinfo">机房信息</a>
+            </h4>
+        </div>
+        <div id="collapseidcinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <dl class="dl-horizontal">
+                    <dt >机房:</dt>
+                    <dd>{{ object.idc }}</dd>
+                    <dt >区域:</dt>
+                    <dd>{{ object.zone }}</dd>
+                    <dt >机柜:</dt>
+                    <dd>{{ object.rack }}</dd>
+                    <dt >U位:</dt>
+                    <dd>{{ object.Rack_Position }}</dd>
+                </dl>
+            </div>
+          </div>
+       </div>
+     </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapsehwinfo">硬件信息</a>
+            </h4>
+        </div>
+        <div id="collapsehwinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+                 <dl class="dl-horizontal">
+                    <dt >资产编号:</dt>
+                    <dd>{{ object.Asset_SN }}</dd>
+                    <dt >厂商:</dt>
+                    <dd>{{ object.vendor }}</dd>
+                    <dt >型号:</dt>
+                    <dd>{{ object.model }}</dd>
+                    <dt >序列号:</dt>
+                    <dd>{{ object.SN }}</dd>
+                    <dt >CPU:</dt>
+                    <dd>{{ object.cpu}}</dd>
+                    <dt >CPU个数:</dt>
+                    <dd>{{ object.CPU_Number }}</dd>
+                    <dt >内存:</dt>
+                    <dd>{{ object.memory }}</dd>
+                    <dt >内存条数:</dt>
+                    <dd>{{ object.Memory_Number }}</dd>
+                    <dt >硬盘:</dt>
+                    <dd>{{ object.disk}}</dd>
+                    <dt >硬盘个数:</dt>
+                    <dd>{{ object.Disk_Number }}</dd>
+                    <dt >RAID:</dt>
+                    <dd>{{ object.raid}}</dd>
+                    <dt >RAID电池:</dt>
+                    <dd>{{ object.RAID_Battery }}</dd>
+                    <dt >HBA卡:</dt>
+                    <dd>{{ object.hba }}</dd>
+                    <dt >HBA卡个数:</dt>
+                    <dd>{{ object.HBA_Number}}</dd>
+                    <dt >PCIE卡:</dt>
+                    <dd>{{ object.pcie }}</dd>
+                    <dt >PCIE卡个数:</dt>
+                    <dd>{{ object.PCIE_Number }}</dd>
+                    <dt >外置网卡:</dt>
+                    <dd>{{ object.nic }}</dd>
+                    <dt >外置网卡个数:</dt>
+                    <dd>{{ object.NIC_Number }}</dd>
+                </dl>
+            </div>
+          </div>
+       </div>
+     </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseassetinfo">资产信息</a>
+            </h4>
+        </div>
+        <div id="collapseassetinfo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <dl class="dl-horizontal">
+                    <dt >购买日期:</dt>
+                    <dd>{{ object.Purchasing_Time | date:"Y-m-d" }}</dd>
+                    <dt >过保日期:</dt>
+                    <dd>{{ object.Guarantee_Time | date:"Y-m-d" }}</dd>
+                    <dt >上架日期:</dt>
+                    <dd>{{ object.Up_Time | date:"Y-m-d"}}</dd>
+                    <dt >变更日期:</dt>
+                    <dd>{{ object.Change_Time | date:"Y-m-d"}}</dd>
+                    <dt >变更说明:</dt>
+                    <dd>{{ object.Change_Info }}</dd>
+                    <dt >备注:</dt>
+                    <dd>{{ object.Remarks }}</dd>
+                </dl>
+            </div>
+          </div>
+       </div>
+     </div>
+    
 </div>
 {% endblock %}

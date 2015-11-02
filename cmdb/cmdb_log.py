@@ -7,7 +7,7 @@ def ignorekey(a):
     d = dict(zip(map(string.lower,a.keys()),a.values()))
     return d
 def cmp(d1,d2):
-    s = ''
+    s = u''
     d1 = ignorekey(d1)
     d2 = ignorekey(d2)
     for k in d1.keys():

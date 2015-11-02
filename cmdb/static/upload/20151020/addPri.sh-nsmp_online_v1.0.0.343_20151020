@@ -1,0 +1,78 @@
+#! /bin/bash
+
+if [ $# -lt 2 ]; then
+        usage
+        exit 1
+fi
+
+while getopts "j:u:vh" opt; do
+        case $opt in
+                j) job=$OPTARG;;
+                u) user=$OPTARG;;
+                v) version; exit 1;;
+                h) usage; exit 1;;
+        esac
+done
+
+if [ -z $job ]; then
+        echo "请输入job名称!"
+        exit 1
+fi
+
+if [ -z $user ]; then
+        echo "请输入用户名!"
+        exit 1
+fi
+permissionList=(Read Discover Build Cancel Workspace)
+OLD_IFS="$IFS" 
+IFS="," 
+arr=($job) 
+IFS="$OLD_IFS" 
+function getUser()
+{
+    OLD_IFS="$IFS";
+    IFS=",";
+    userList=($user);
+    IFS="$OLD_IFS";
+}
+getUser
+for u in ${userList[@]}
+    do
+    for s in ${arr[@]} 
+    do 
+    echo "$s" 
+    echo "$u"
+        for permission in ${permissionList[@]} 
+        do 
+       
+            file=/home/jenkins/jobs/$s/config.xml
+            intoword="<permission>hudson.model.Item.$permission:${u}</permission>"
+            echo "$file"
+            echo "$intoword"
+            true=`grep $intoword $file|wc -l`
+            echo $true
+            count=`expr $true + 0`
+            echo $count
+            if [ $count -eq 0 ]
+            then
+                findWord="<hudson.security.AuthorizationMatrixProperty>"
+                findCount=`grep $findWord $file |wc -l`
+                findCount=`expr $findCount + 0`
+                if [ $findCount -eq 1 ]
+                then 
+                    echo "添加权限  $permission" 
+                    sed -i "/<hudson.security.AuthorizationMatrixProperty>/a$intoword" $file
+                fi
+            else
+                echo "已存在权限 $permission" 
+            fi
+            # grep "<hudson.security.AuthorizationMatrixProperty" $file|sed "/AuthorizationMatrixProperty/a\<permission\>hudson.model.Item.${permission}:${user}\<\/permission\>" 
+        
+        done   
+        echo "reload the job == $s"
+        java -jar /home/shell/privillage/jenkins-cli.jar -s http://10.100.30.209:8080/jenkins/ reload-job $s --username admin --password jenkins@123
+    done
+done
+
+
+

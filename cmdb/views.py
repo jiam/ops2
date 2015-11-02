@@ -84,17 +84,8 @@ def changepw(request):
 @login_required
 def get_login_log(request):
     if request.method == 'GET':
-        objects_list = Loginlog.objects.all().order_by('-id')
-        num = objects_list.count()
-        paginator = Paginator(objects_list,15)
-        page = request.GET.get('page')
-        try:
-            objects = paginator.page(page)
-        except PageNotAnInteger:
-            objects = paginator.page(1)
-        except EmptyPage:
-            objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        objects = Loginlog.objects.all().order_by('-id')
+        context = {'objects':objects}
         return render(request,'loginlog_list.html',context)
 @login_required
 def search_login_log(request):
@@ -121,17 +112,8 @@ def search_login_log(request):
 @login_required
 def get_op_log(request):
     if request.method == 'GET':
-        page = request.GET.get('page')
         objects = LogEntry.objects.all().order_by('-id')
-        num = LogEntry.objects.count()
-        paginator = Paginator(objects,15)
-        try:
-            objects = paginator.page(page)
-        except PageNotAnInteger:
-            objects = paginator.page(1)
-        except EmptyPage:
-            objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        context = {'objects':objects}
         return render(request,'oplog_list.html',context)
 
 

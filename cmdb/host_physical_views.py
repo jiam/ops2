@@ -13,47 +13,51 @@ import json
 @login_required
 def physical_get(request):
     if request.method == 'GET':
-        objects_list = HostPhysical.objects.all().order_by('-id')
-        num = objects_list.count()
-        paginator = Paginator(objects_list,15)
-        page = request.GET.get('page')
-        try:
-            objects = paginator.page(page)
-        except PageNotAnInteger:
-            objects = paginator.page(1)
-        except EmptyPage:
-            objects = paginator.page(paginator.num_pages)
-        context = {'objects':objects,'total':num}
+        objects = HostPhysical.objects.all().order_by('-id')
+        context = {'objects':objects}
         return render(request,'host_physical_list.html',context)
 
 @login_required
 @permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_add(request):
-    form = HostPhysicalForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        i = form.instance
-        data = form.cleaned_data
-        cmdb_log.log_addition(request,i,i.HostName,data)
-        return redirect('host_physical_get')
-    #else:
-    #    return HttpResponse(form.errors)
-    return render(request, 'host_physical_form.html', {'form':form})
+    if request.method == 'POST':
+        form = HostPhysicalForm(request.POST or None)
+        if form.is_valid():
+            form_data = form.cleaned_data
+            data = {}
+            for key in  form_data:
+                if form_data[key]:
+                    data[key] = form_data[key]
+            i = HostPhysical(**data)
+            i.save()
+            cmdb_log.log_addition(request,i,i.HostName,data)
+            return redirect('host_physical_get')
+        else:
+            return HttpResponse(json.dumps(form.errors))
+    else:
+        form = HostPhysicalForm()
+        return render(request, 'host_physical_add_form.html', {'form':form})
 
 @login_required
 @permission_required('cmdb.change_hostphysical',raise_exception=True)
 def physical_edit(request,pk):
-    object = get_object_or_404(HostPhysical,pk=pk)
+    object= get_object_or_404(HostPhysical,pk=pk)
     object_data = model_to_dict(object)
-    form = HostPhysicalForm(request.POST or None, instance=object)
+    objects = HostPhysical.objects.filter(pk=pk)
+    form = HostPhysicalForm(request.POST or None,instance=object)
     if form.is_valid():
-        form.save()
-        i = form.instance
-        form_data = model_to_dict(i)
-        message = cmdb_log.cmp(form_data,object_data)
-        cmdb_log.log_change(request,i,form_data['HostName'],message)
+        form_data = form.cleaned_data
+        data = {}
+        for key in  form_data:
+            if form_data[key]:
+                data[key] = form_data[key]
+        objects.update(**data)
+        new_object= get_object_or_404(HostPhysical,pk=pk)
+        new_object_data = model_to_dict(new_object)
+        message = cmdb_log.cmp(new_object_data,object_data)
+        cmdb_log.log_change(request,new_object,form_data['HostName'],message)
         return redirect('host_physical_get')
-    return render(request,'host_physical_form.html', {'form':form})
+    return render(request,'host_physical_update_form.html', {'form':form})
 
 @login_required
 @permission_required('cmdb.change_hostphysical',raise_exception=True)
