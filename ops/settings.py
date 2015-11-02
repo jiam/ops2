@@ -102,3 +102,4 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 LOGIN_URL = '/cmdb/login'
+SESSION_SAVE_EVERY_REQUEST = True
