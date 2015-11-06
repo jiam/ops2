@@ -315,22 +315,54 @@ def host_physical_add(request):
         return HttpResponse(response)
     try:
         params = data['params']
-        params['vendor'] = Vendor.objects.get(id=params['vendor'])
-        params['model'] = Model.objects.get(id=params['model'])
-        params['os'] = OS.objects.get(id=params['os'])
-        params['kernel'] = Kernel.objects.get(id=params['kernel'])
-        params['service'] = Service.objects.get(id=params['service'])
-        params['department'] = Department.objects.get(id=params['department'])
-        params['idc'] = IDC.objects.get(id=params['idc'])
-        params['rack'] = Rack.objects.get(id=params['rack'])
-        params['cpu'] = CPU.objects.get(id=params['cpu'])
-        params['memory'] = Memory.objects.get(id=params['memory'])
-        params['disk'] = Disk.objects.get(id=params['disk'])
-        params['hba'] = HBA.objects.get(id=params['hba'])
-        params['pcie'] = PCIE.objects.get(id=params['pcie'])
-        params['nic'] = NIC.objects.get(id=params['nic'])
-        params['raid'] = RAID.objects.get(id=params['raid'])
-        params['zone'] = Zone.objects.get(id=params['zone'])
+       # params['vendor'] = Vendor.objects.get(id=params['vendor'])
+       # params['model'] = Model.objects.get(id=params['model'])
+       # params['os'] = OS.objects.get(id=params['os'])
+       # params['kernel'] = Kernel.objects.get(id=params['kernel'])
+       # params['service'] = Service.objects.get(id=params['service'])
+       # params['department'] = Department.objects.get(id=params['department'])
+       # params['idc'] = IDC.objects.get(id=params['idc'])
+       # params['rack'] = Rack.objects.get(id=params['rack'])
+       # params['cpu'] = CPU.objects.get(id=params['cpu'])
+       # params['memory'] = Memory.objects.get(id=params['memory'])
+       # params['disk'] = Disk.objects.get(id=params['disk'])
+       # params['hba'] = HBA.objects.get(id=params['hba'])
+       # params['pcie'] = PCIE.objects.get(id=params['pcie'])
+       # params['nic'] = NIC.objects.get(id=params['nic'])
+       # params['raid'] = RAID.objects.get(id=params['raid'])
+       # params['zone'] = Zone.objects.get(id=params['zone'])
+        if 'vendor' in params:
+            params['vendor'] = Vendor.objects.get(id=params['vendor'])
+        if 'model' in params:
+            params['model'] = Model.objects.get(id=params['model'])
+        if 'os' in params:
+            params['os'] = OS.objects.get(id=params['os'])
+        if 'kernel' in params:
+            params['kernel'] = Kernel.objects.get(id=params['kernel'])
+        if 'service' in params:
+            params['service'] = Service.objects.get(id=params['service'])
+        if 'department' in params:
+            params['department'] = Department.objects.get(id=params['department'])
+        if 'idc' in params:
+            params['idc'] = IDC.objects.get(id=params['idc'])
+        if 'rack' in params:
+            params['rack'] = Rack.objects.get(id=params['rack'])
+        if 'cpu' in params:
+            params['cpu'] = CPU.objects.get(id=params['cpu'])
+        if 'memory' in params:
+            params['memory'] = Memory.objects.get(id=params['memory'])
+        if 'disk' in params:
+            params['disk'] = Disk.objects.get(id=params['disk'])
+        if 'hba' in params:
+            params['hba'] = HBA.objects.get(id=params['hba'])
+        if 'pcie' in params:
+            params['pcie'] = PCIE.objects.get(id=params['pcie'])
+        if 'nic' in params:
+            params['nic'] = NIC.objects.get(id=params['nic'])
+        if 'raid' in params:
+            params['raid'] = RAID.objects.get(id=params['raid'])
+        if 'zone' in params:
+            params['zone'] = Zone.objects.get(id=params['zone'])        
         host = HostPhysical(**params)
         host.save()
         cmdb_log.log_addition(request,host,params['Manage_IP'],params)

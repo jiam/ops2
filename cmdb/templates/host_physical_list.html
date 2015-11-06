@@ -20,6 +20,7 @@
             <tr> 
                 <th>id</th> 
                 <th>主机名</th> 
+                <th>序列号</th> 
                 <th>主机状态</th> 
                 <th>管理IP</th> 
                 <th>远程管理IP</th> 
@@ -36,6 +37,7 @@
            <tr> 
                 <td>{{object.id}}</td> 
                 <td>{{object.HostName}}</td> 
+                <td>{{object.SN}}</td> 
                 {% if object.Status == 0 %}
                     <td>使用</td> 
                 {% elif object.Status == 1 %}
