@@ -476,6 +476,9 @@ class HostVirtualForm(ModelForm):
         'required':'True',
         'class':'form-control',
         'autofocus':'True'}))
+    App_Level = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'form-control',
+        }))
     department = forms.ModelChoiceField(widget=forms.Select(attrs={
         'class':'form-control',
         }),

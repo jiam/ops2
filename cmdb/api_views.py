@@ -484,10 +484,14 @@ def host_virtual_add(request):
         return HttpResponse(response)
     try:
         params = data['params']
-        params['os'] = OS.objects.get(id=params['os'])
-        params['kernel'] = Kernel.objects.get(id=params['kernel'])
-        params['service'] = Service.objects.get(id=params['service'])
-        params['department'] = Department.objects.get(id=params['department'])
+        if 'os' in params: 
+            params['os'] = OS.objects.get(id=params['os'])
+        if 'kernel' in params: 
+            params['kernel'] = Kernel.objects.get(id=params['kernel'])
+        if 'service' in params: 
+            params['service'] = Service.objects.get(id=params['service'])
+        if 'department' in params: 
+            params['department'] = Department.objects.get(id=params['department'])
         host = HostVirtual(**params)
         host.save()
         cmdb_log.log_addition(request,host,params['Manage_IP'],params)

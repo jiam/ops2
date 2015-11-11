@@ -199,6 +199,7 @@ class HostVirtual(models.Model):
     os = models.ForeignKey(OS,blank=True,null=True)
     kernel = models.ForeignKey(Kernel,blank=True,null=True)
     HostName = models.CharField(max_length=30)
+    App_Level = models.CharField(max_length=30,blank=True,null=True)
     service = models.ForeignKey(Service,blank=True,null=True)
     User = models.CharField(blank=True,null=True,max_length=30)
     department = models.ForeignKey(Department,blank=True,null=True)
