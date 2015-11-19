@@ -26,6 +26,7 @@
                 <th>远程管理IP</th> 
                 <th>使用者</th> 
                 <th>用途</th> 
+                <th>IDC</th> 
                 <th>编辑</th> 
                 <th>删除</th> 
                 <th>详情</th> 
@@ -51,6 +52,7 @@
                 <td>{{object.RAC_IP}}</td> 
                 <td>{{object.User}}</td> 
                 <td>{{object.UseInfo}}</td> 
+                <td>{{object.idc}}</td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_edit' object.id %}">编辑</a></td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_delete' object.id %}">删除</a></td> 
                 <td><a class="playitbtn tryitbtnsyntax" href="{% url 'host_physical_detail' object.id %}">详情</a></td> 
